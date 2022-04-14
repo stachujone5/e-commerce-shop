@@ -1,19 +1,20 @@
 import Slider from 'react-slick'
 
+const settings = {
+	dots: true,
+	infinite: true,
+	speed: 500,
+	slidesToShow: 1,
+	slidesToScroll: 1,
+	autoplay: true,
+	autoplaySpeed: 3000,
+}
+
 export const ImgSlider = () => {
-	var settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 1000,
-	}
 	return (
-		<Slider {...settings}>
+		<Slider {...settings} className='w-3/4 mx-auto max-w-4xl my-16'>
 			<div>
-				<h3>1</h3>
+				<img src='https://i.pinimg.com/originals/70/b7/5f/70b75f00a5681f8473b20d09fb0d3db5.jpg' alt='' />
 			</div>
 			<div>
 				<h3>2</h3>
