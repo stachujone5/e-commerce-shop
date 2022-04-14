@@ -2,12 +2,12 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { menuItems } from '../../constants/menuItems'
 
-interface NavListMobileProps {
+interface NavListProps {
 	isNavOpen: boolean
 	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const NavListMobile = ({ isNavOpen, setIsNavOpen }: NavListMobileProps) => {
+export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 	const ulRef = useRef<HTMLUListElement>(null)
 	let height: string | number = 0
 
@@ -22,8 +22,8 @@ export const NavListMobile = ({ isNavOpen, setIsNavOpen }: NavListMobileProps) =
 	return (
 		<div
 			style={{ height: isNavOpen ? height : '0' }}
-			className='h-0 absolute top-full overflow-hidden z-50 transition-all bg-primary right-0 left-0 px-5 md:hidden'>
-			<ul ref={ulRef}>
+			className='h-0 absolute top-full overflow-hidden z-50 transition-all bg-primary right-0 left-0 md:static md:top-auto  md:overflow-visible'>
+			<ul ref={ulRef} className='md:flex md:gap-5 md:mx-5 md:px-5'>
 				{menuItems.map((item: string) => {
 					return (
 						<li className='my-3' key={item}>

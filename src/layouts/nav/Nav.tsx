@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { NavListDesktop } from './NavListDesktop'
 import { NavBurger } from './NavBurger'
-import { NavListMobile } from './NavListMobile'
+import { NavList } from './NavList'
 
 export const Nav = () => {
 	const [isNavOpen, setIsNavOpen] = useState(false)
@@ -11,9 +10,8 @@ export const Nav = () => {
 			<a href='#blank' className='text-4xl'>
 				L O G O
 			</a>
-			<NavListDesktop />
 			<NavBurger setIsNavOpen={setIsNavOpen} />
-			<NavListMobile isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+			<NavList isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 		</nav>
 	)
 }
