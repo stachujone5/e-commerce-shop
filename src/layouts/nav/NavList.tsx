@@ -6,7 +6,7 @@ interface NavListProps {
 	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const menuItems = ['man', 'woman', 'jewelery', 'all']
+const menuItems = ['man', 'woman', 'kids', 'all']
 
 export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 	const ulRef = useRef<HTMLUListElement>(null)
