@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { MouseEvent, useState } from 'react'
 import { productInterface } from '../../products'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import { Button } from '../../components/button/Button'
@@ -30,8 +30,10 @@ export const ItemImgPreview = ({ product }: ItemImgPreviewProps) => {
 		})
 	}
 
+	const handleMouseMove = (e: MouseEvent) => {}
+
 	return (
-		<div className='relative w-1/3 overflow-hidden'>
+		<div className='relative md:w-1/3 overflow-hidden' onMouseMove={handleMouseMove}>
 			<div className='flex transition-all' style={{ transform: `translateX(-${transform}%)` }}>
 				<img src={product?.images[0]} alt={product?.description} />
 				<img src={product?.images[1]} alt={product?.description} />

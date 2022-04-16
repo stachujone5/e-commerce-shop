@@ -9,7 +9,7 @@ export const SingleShopItem = ({ id, category, description, brand, images, price
 				<div className='p-2 h-32 flex flex-col justify-center'>
 					<p className=''>{brand}</p>
 					<p className='my-2'>{description}</p>
-					<p>${price}</p>
+					<p className='text-red-600'>{price} €</p>
 				</div>
 			</div>
 		</Link>
