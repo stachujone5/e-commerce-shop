@@ -2,6 +2,7 @@ import { Nav } from './layouts/nav/Nav'
 import { Route, Routes } from 'react-router-dom'
 import { Item } from './pages/item/Item'
 import { Home } from './pages/home/Home'
+import { Footer } from './layouts/footer/Footer'
 
 export const App = () => {
 	return (
@@ -11,6 +12,7 @@ export const App = () => {
 				<Route path='/' element={<Home />} />
 				<Route path=':id' element={<Item />} />
 			</Routes>
+			<Footer />
 		</>
 	)
 }

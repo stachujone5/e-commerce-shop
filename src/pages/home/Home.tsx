@@ -1,3 +1,4 @@
+import { ContactUs } from '../../components/contact_us/ContactUs'
 import { Container } from '../../components/container/Container'
 import { ImgSlider } from '../../components/img_slider/ImgSlider'
 import { Shop } from '../../components/shop/Shop'
@@ -11,6 +12,7 @@ export const Home = () => {
 				<Container>
 					<Shop />
 					<ImgSlider />
+					<ContactUs />
 				</Container>
 			</main>
 		</>
