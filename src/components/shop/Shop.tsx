@@ -1,15 +1,14 @@
 import { productInterface, products } from '../../products'
-import { Container } from '../container/Container'
-import { ShopItem } from '../shop_item/ShopItem'
+import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 
 export const Shop = () => {
 	return (
-		<Container>
+		<section>
 			<div className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'>
 				{products.map((product: productInterface) => (
-					<ShopItem key={product.id} {...product} />
+					<SingleShopItem key={product.id} {...product} />
 				))}
 			</div>
-		</Container>
+		</section>
 	)
 }

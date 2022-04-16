@@ -1,36 +1,48 @@
 import Slider from 'react-slick'
+import img1 from '../../images/1.jpg'
+import img2 from '../../images/2.png'
+import img3 from '../../images/3.png'
+import img4 from '../../images/4.png'
+import img5 from '../../images/5.png'
 
 const settings = {
 	dots: true,
 	infinite: true,
-	speed: 500,
-	slidesToShow: 1,
+	speed: 1000,
+	slidesToShow: 2,
 	slidesToScroll: 1,
 	autoplay: true,
 	autoplaySpeed: 3000,
+	responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 1,
+			},
+		},
+	],
 }
 
 export const ImgSlider = () => {
 	return (
-		<Slider {...settings} className='w-3/4 mx-auto max-w-4xl my-16'>
-			<div>
-				<img src='https://i.pinimg.com/originals/70/b7/5f/70b75f00a5681f8473b20d09fb0d3db5.jpg' alt='' />
-			</div>
-			<div>
-				<h3>2</h3>
-			</div>
-			<div>
-				<h3>3</h3>
-			</div>
-			<div>
-				<h3>4</h3>
-			</div>
-			<div>
-				<h3>5</h3>
-			</div>
-			<div>
-				<h3>6</h3>
-			</div>
-		</Slider>
+		<section>
+				<Slider {...settings} className='my-16'>
+					<div className='px-10'>
+						<img src={img1} alt='' />
+					</div>
+					<div className='px-10'>
+						<img src={img2} alt='' />
+					</div>
+					<div className='px-10'>
+						<img src={img3} alt='' />
+					</div>
+					<div className='px-10'>
+						<img src={img4} alt='' />
+					</div>
+					<div className='px-10'>
+						<img src={img5} alt='' />
+					</div>
+				</Slider>
+		</section>
 	)
 }
