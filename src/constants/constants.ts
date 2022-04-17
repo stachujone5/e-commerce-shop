@@ -21,3 +21,7 @@ export const defaultCheckedBrands = { Nike: true, Adidas: true, 'New Balance': t
 export type brandInterface = 'Nike' | 'Adidas' | 'New Balance' | 'Vans'
 
 export const BRANDS: brandInterface[] = ['Nike', 'Adidas', 'New Balance', 'Vans']
+
+export const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+
+export const MENU_ITEMS = ['man', 'woman', 'kids', 'all', 'cart']

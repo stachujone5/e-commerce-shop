@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
-
-const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
+import { EMAIL_REGEX } from '../../constants/constants'
 
 export const ContactUs = () => {
 	const [isSubmited, setIsSubmited] = useState(false)
@@ -9,7 +8,7 @@ export const ContactUs = () => {
 
 	const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		if (inputRef.current!.value.match(emailRegex)) {
+		if (inputRef.current!.value.match(EMAIL_REGEX)) {
 			inputRef.current!.value = ''
 			setIsSubmited(true)
 			setTimeout(() => {

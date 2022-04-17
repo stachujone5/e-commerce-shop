@@ -1,12 +1,11 @@
 import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
+import { MENU_ITEMS } from '../../constants/constants'
 
 interface NavListProps {
 	isNavOpen: boolean
 	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
-
-const menuItems = ['man', 'woman', 'kids', 'all', 'cart']
 
 export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 	const ulRef = useRef<HTMLUListElement>(null)
@@ -23,9 +22,9 @@ export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 	return (
 		<div
 			style={{ height: isNavOpen ? height : '0' }}
-			className='h-0 absolute top-full overflow-hidden z-50 transition-all bg-primary right-0 left-0 md:static md:top-auto  md:overflow-visible'>
+			className='h-0 absolute top-full overflow-hidden z-50 transition-all bg-primary/90 right-0 left-0 md:static md:top-auto  md:overflow-visible'>
 			<ul ref={ulRef} className='mx-5 md:flex md:gap-5 md:px-5'>
-				{menuItems.map((item: string) => {
+				{MENU_ITEMS.map((item: string) => {
 					return (
 						<li key={item}>
 							<NavLink
