@@ -1,7 +1,7 @@
 import { productInterface } from '../../products'
 import { Link } from 'react-router-dom'
 
-export const SingleShopItem = ({ id, category, description, brand, images, price }: productInterface) => {
+export const SingleShopItem = ({ id, description, brand, images, price }: productInterface) => {
 	return (
 		<Link to={`/${id}`}>
 			<div className='flex flex-col max-w-s border rounded overflow-hidden'>

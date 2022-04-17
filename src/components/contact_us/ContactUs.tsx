@@ -1,10 +1,12 @@
 import { useRef, useState } from 'react'
 
-const emailRegex = /^\w+([.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
 
 export const ContactUs = () => {
 	const [isSubmited, setIsSubmited] = useState(false)
+	const [isError, setIsError] = useState(false)
 	const inputRef = useRef<HTMLInputElement>(null)
+
 	const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		if (inputRef.current!.value.match(emailRegex)) {
@@ -12,6 +14,11 @@ export const ContactUs = () => {
 			setIsSubmited(true)
 			setTimeout(() => {
 				setIsSubmited(false)
+			}, 3000)
+		} else {
+			setIsError(true)
+			setTimeout(() => {
+				setIsError(false)
 			}, 3000)
 		}
 	}
@@ -33,7 +40,8 @@ export const ContactUs = () => {
 						type='email'
 						id='email'
 						ref={inputRef}
-						className='w-full rounded-lg p-2 my-1 text-primary'
+						className='w-full rounded-lg p-2 my-1 text-primary border-2'
+						style={{ borderColor: isError ? 'rgb(220 38 38)' : '#fff' }}
 						placeholder='subscribe@logo.com'
 					/>
 					<button className='block ml-auto rounded-lg border p-2 my-3 hover:bg-white hover:text-primary transition-colors'>
