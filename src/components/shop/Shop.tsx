@@ -1,10 +1,10 @@
 import { useLocation } from 'react-router-dom'
-import { productInterface, products } from '../../products'
+import { productInterface, products } from '../../constants/products'
 import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 import { BrandsFilter } from '../brands_filter/BrandsFilter'
 import { useEffect, useState } from 'react'
-import { defaultCheckedBrands } from '../../constants'
-import { isBrandType } from '../../helpers'
+import { defaultCheckedBrands } from '../../constants/constants'
+import { isBrandType } from '../../helpers/helpers'
 
 export const Shop = () => {
 	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)

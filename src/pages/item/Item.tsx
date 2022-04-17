@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { Container } from '../../components/container/Container'
-import { products } from '../../products'
+import { products } from '../../constants/products'
 import { ItemImgPreview } from '../../components/item_img_preview/ItemImgPreview'
 import { Sizes } from '../../components/sizes/Sizes'
 

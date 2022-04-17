@@ -1,7 +1,4 @@
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { brandInterface } from '../../constants'
-
-const brands: brandInterface[] = ['Nike', 'Adidas', 'New Balance', 'Vans']
+import { BRANDS } from '../../constants/constants'
 
 interface BrandsFilterProps {
 	isChecked: { Nike: boolean; Adidas: boolean; 'New Balance': boolean; Vans: boolean }
@@ -10,22 +7,17 @@ interface BrandsFilterProps {
 
 export const BrandsFilter = ({ isChecked, handleCheck }: BrandsFilterProps) => {
 	return (
-		<div className='flex justify-between'>
-			<div className='flex gap-4'>
-				{brands.map(brand => {
-					return (
-						<div key={brand}>
-							<label htmlFor={brand} className={isChecked[brand] ? 'border-b-2 cursor-pointer' : 'cursor-pointer'}>
-								{brand}
-							</label>
-							<input type='checkbox' id={brand} className='hidden' onChange={handleCheck} defaultChecked />
-						</div>
-					)
-				})}
-			</div>
-			<button className='text-6xl'>
-				<AiOutlineShoppingCart />
-			</button>
+		<div className='flex gap-4 mb-5 md:mb-7'>
+			{BRANDS.map(brand => {
+				return (
+					<div key={brand} className='text-sm sm:text-base md:text-xl'>
+						<label htmlFor={brand} className={isChecked[brand] ? 'border-b-2 cursor-pointer' : 'cursor-pointer'}>
+							{brand}
+						</label>
+						<input type='checkbox' id={brand} className='hidden' onChange={handleCheck} defaultChecked />
+					</div>
+				)
+			})}
 		</div>
 	)
 }

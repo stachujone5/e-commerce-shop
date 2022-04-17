@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { productInterface } from '../../products'
+import { productInterface } from '../../constants/products'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import { Button } from '../../components/button/Button'
 

@@ -19,3 +19,5 @@ export const defaultCheckedSizes = {
 export const defaultCheckedBrands = { Nike: true, Adidas: true, 'New Balance': true, Vans: true }
 
 export type brandInterface = 'Nike' | 'Adidas' | 'New Balance' | 'Vans'
+
+export const BRANDS: brandInterface[] = ['Nike', 'Adidas', 'New Balance', 'Vans']

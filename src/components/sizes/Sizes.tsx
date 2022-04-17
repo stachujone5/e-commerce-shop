@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
-import { defaultCheckedSizes, SIZES } from '../../constants'
-import { isSizeType } from '../../helpers'
+import { defaultCheckedSizes, SIZES } from '../../constants/constants'
+import { isSizeType } from '../../helpers/helpers'
 
 export const Sizes = () => {
 	const [isChecked, setIsChecked] = useState(defaultCheckedSizes)

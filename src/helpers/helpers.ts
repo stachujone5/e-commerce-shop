@@ -1,4 +1,4 @@
-import { brandInterface, defaultCheckedBrands, SIZES, sizesType } from './constants'
+import { brandInterface, defaultCheckedBrands, SIZES, sizesType } from '../constants/constants'
 
 export const isSizeType = (id: string): id is sizesType => {
 	return (SIZES as readonly string[]).includes(id)

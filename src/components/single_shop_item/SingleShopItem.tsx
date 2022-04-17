@@ -1,4 +1,4 @@
-import { productInterface } from '../../products'
+import { productInterface } from '../../constants/products'
 import { Link } from 'react-router-dom'
 
 export const SingleShopItem = ({ id, description, brand, images, price }: productInterface) => {
