@@ -5,7 +5,10 @@ import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 export const Shop = () => {
 	const { pathname } = useLocation()
 	const path = pathname.slice(1)
-	const newProducts = products.filter(product => product.category === path)
+	let newProducts = products.filter(product => product.category === path)
+	if (path === 'all') {
+		newProducts = products
+	}
 
 	return (
 		<section>

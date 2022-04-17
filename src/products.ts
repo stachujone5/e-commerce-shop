@@ -18,8 +18,8 @@ export const products: productInterface[] = [
 			'https://img01.ztat.net/article/spp-media-p1/baf500abb4634f99871540cb1c71c4e7/39fad2e3bcb6476a89244d1f8f561d20.jpg?imwidth=1800&filter=packshot',
 			'https://img01.ztat.net/article/spp-media-p1/ae5e91dd11494019b9520abfcccccc81/94dfeca1ea524900891217815c60485a.jpg?imwidth=1800',
 			'https://img01.ztat.net/article/spp-media-p1/c419f278b97a47939a5248a31f9fd5bd/a67956c20465486ba63f4387b492c570.jpg?imwidth=1800',
-			'https://img01.ztat.net/article/spp-media-p1/c1582f5e9d7641e183cb6f7682ee8757/b3945102fced4fb49c7a2225ce634cca.jpg?imwidth=156',
-			'https://img01.ztat.net/article/spp-media-p1/dc440c28ffdd4e65a994268ed96ca4bf/a5fe38502aa84876bd60cf8e0167f254.jpg?imwidth=156',
+			'https://img01.ztat.net/article/spp-media-p1/c1582f5e9d7641e183cb6f7682ee8757/b3945102fced4fb49c7a2225ce634cca.jpg?imwidth=1800',
+			'https://img01.ztat.net/article/spp-media-p1/dc440c28ffdd4e65a994268ed96ca4bf/a5fe38502aa84876bd60cf8e0167f254.jpg?imwidth=1800',
 		],
 	},
 	{

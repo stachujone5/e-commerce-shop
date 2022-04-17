@@ -1,12 +1,13 @@
 import { useRef } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
+import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 interface NavListProps {
 	isNavOpen: boolean
 	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const menuItems = ['man', 'woman', 'kids', 'all']
+const menuItems = ['man', 'woman', 'kids', 'all', 'cart']
 
 export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 	const ulRef = useRef<HTMLUListElement>(null)
@@ -27,12 +28,17 @@ export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 			<ul ref={ulRef} className='mx-5 md:flex md:gap-5 md:px-5'>
 				{menuItems.map((item: string) => {
 					return (
-						<li
-							className='w-fit relative my-3 before:w-0 before:h-0.5 before:transition-all before:absolute before:bottom-0 before:content-[""] before:bg-red-700 hover:before:w-full'
-							key={item}>
-							<Link to={`/${item}`} onClick={closeNav}>
+						<li key={item}>
+							<NavLink
+								to={`/${item}`}
+								onClick={closeNav}
+								className={({ isActive }) =>
+									isActive
+										? 'border-b-2 border-red-700'
+										: 'w-fit relative my-3 before:w-0 before:h-0.5 before:transition-all before:absolute before:bottom-0 before:content-[""] before:bg-red-700 hover:before:w-full'
+								}>
 								{item}
-							</Link>
+							</NavLink>
 						</li>
 					)
 				})}
