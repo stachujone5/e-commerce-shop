@@ -1,6 +1,5 @@
 import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 interface NavListProps {
 	isNavOpen: boolean

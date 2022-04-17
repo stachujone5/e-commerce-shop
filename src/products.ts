@@ -1,9 +1,11 @@
+import { brandInterface } from './components/shop/Shop'
 export interface productInterface {
 	id: number
 	price: number
 	description: string
 	category: string
 	brand: string
+	shortBrand: brandInterface
 	images: string[]
 }
 
@@ -13,6 +15,7 @@ export const products: productInterface[] = [
 		price: 159.0,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'OZELIA UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/baf500abb4634f99871540cb1c71c4e7/39fad2e3bcb6476a89244d1f8f561d20.jpg?imwidth=1800&filter=packshot',
@@ -27,6 +30,7 @@ export const products: productInterface[] = [
 		price: 149.99,
 		category: 'man',
 		brand: 'Nike Sportswear',
+		shortBrand: 'Nike',
 		description: 'AIR MAX ESSENTIAL - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/f819a9e6f38843dcaeda3998dd9f869f/9413e2cc0cc244b18c6643a0ac06ae77.jpg?imwidth=1800&filter=packshot',
@@ -41,6 +45,7 @@ export const products: productInterface[] = [
 		price: 154.99,
 		category: 'man',
 		brand: 'Nike Sportswear',
+		shortBrand: 'Nike',
 		description: 'AIR MAX 95 UL J22 - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/ddfa1bc9b7924635886b27897e3915f1/a01dee194d0e4d03a772cf4f81dfffe3.jpg?imwidth=1800&filter=packshot',
@@ -55,6 +60,7 @@ export const products: productInterface[] = [
 		price: 89.99,
 		category: 'man',
 		brand: 'New Balance',
+		shortBrand: 'New Balance',
 		description: '574 - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/f27f0effff473900b57bc24c746f1807/4061134ae9004a259980c4996ed9f92b.jpg?imwidth=1800&filter=packshot',
@@ -69,6 +75,7 @@ export const products: productInterface[] = [
 		price: 109.95,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/0c483cb95a1f46df8da81d47f44f88f9/a6a28268836c479caecf15fe51a8fa00.jpg?imwidth=1800&filter=packshot',
@@ -83,6 +90,7 @@ export const products: productInterface[] = [
 		price: 89.99,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'ZX 700 HD - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/d7f35be129723dfe84cd679df8050726/6bbaea83ceec4284b9108035a40c8124.jpg?imwidth=1800&filter=packshot',
@@ -96,6 +104,7 @@ export const products: productInterface[] = [
 		id: 7,
 		price: 69.99,
 		category: 'man',
+		shortBrand: 'New Balance',
 		brand: 'New Balance',
 		description: 'GM500 - Trainers',
 		images: [
@@ -111,6 +120,7 @@ export const products: productInterface[] = [
 		price: 64.99,
 		category: 'man',
 		brand: 'New Balance',
+		shortBrand: 'New Balance',
 		description: '500 - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/78f48bcaf5934a9881bad5720cac9e4c/9593a822d81d424186d077b7e9afb313.jpg?imwidth=1800&filter=packshot',
@@ -125,6 +135,7 @@ export const products: productInterface[] = [
 		price: 69.99,
 		category: 'man',
 		brand: 'New Balance',
+		shortBrand: 'New Balance',
 		description: 'CT 300 UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/1ca2c43534514211816987e9c5aa3f3b/7d1a28fd8a4848a6962068701176e033.jpg?imwidth=1800&filter=packshot',
@@ -139,6 +150,7 @@ export const products: productInterface[] = [
 		price: 124.99,
 		category: 'man',
 		brand: 'Nike',
+		shortBrand: 'Nike',
 		description: 'AIR JORDAN 1 - High-top trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/989dcb97263c4aed8380fc927e3e97fb/cf78d7a468a04606aabc85fd4c9097a5.jpg?imwidth=1800&filter=packshot',
@@ -153,6 +165,7 @@ export const products: productInterface[] = [
 		price: 150.0,
 		category: 'man',
 		brand: 'Nike',
+		shortBrand: 'Nike',
 		description: 'AIR VAPORMAX 2021 - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/f402bd2ebd8b440387f327fc432d6242/9bd335282276462fa63a35afc53bbb23.jpg?imwidth=1800&filter=packshot',
@@ -167,6 +180,7 @@ export const products: productInterface[] = [
 		price: 69.99,
 		category: 'man',
 		brand: 'Vans',
+		shortBrand: 'Vans',
 		description: 'UA OLD SKOOL - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/b609cbddf5fd33e2b186fdac5e7ed0f2/823599cb71ee48cc99ab028f7123d3e0.jpg?imwidth=1800&filter=packshot',
@@ -181,6 +195,7 @@ export const products: productInterface[] = [
 		price: 69.99,
 		category: 'man',
 		brand: 'Vans',
+		shortBrand: 'Vans',
 		description: 'OLD SKOOL UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/50845f0db11435aa9e405dc1dab37102/96d65ea5a6b640d1a5118931f15a7baf.jpg?imwidth=1800&filter=packshot',
@@ -195,6 +210,7 @@ export const products: productInterface[] = [
 		price: 76.0,
 		category: 'man',
 		brand: 'Vans',
+		shortBrand: 'Vans',
 		description: 'SK8-HI UNISEX - High-top trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/c3801844838448fea72c69c9088e4ca6/33a30432f2fd474a9cc9aefe57b77463.jpg?imwidth=1800&filter=packshot',
@@ -209,6 +225,7 @@ export const products: productInterface[] = [
 		price: 79.99,
 		category: 'man',
 		brand: 'Vans',
+		shortBrand: 'Vans',
 		description: 'SK8-HI UNISEX - High-top trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/f90ce2d958bc45e3a49f01977c70634e/4ea2d03e1f4c4d6c92d13fb866b019fe.jpg?imwidth=1800&filter=packshot',
@@ -223,6 +240,7 @@ export const products: productInterface[] = [
 		price: 45.0,
 		category: 'man',
 		brand: 'Vans',
+		shortBrand: 'Vans',
 		description: 'STYLE 36 DECON UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/ea7d991df5b9462388bef57c7a1174b6/d3f582305fae4332b289c28c1ead314a.jpg?imwidth=1800&filter=packshot',
@@ -237,6 +255,7 @@ export const products: productInterface[] = [
 		price: 89.95,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'OZWEEGO UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/0410a09b61804142b0f9a989541c2a2f/083a14a7ec3c404386a3eb669175184d.jpg?imwidth=1800&filter=packshot',
@@ -251,6 +270,7 @@ export const products: productInterface[] = [
 		price: 79.95,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'FORUM LOW UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/7e76bbd458d749f88c27ddf638d0ad3f/922222f99f524fbfab8b0dfc6c242df4.jpg?imwidth=1800',
@@ -265,6 +285,7 @@ export const products: productInterface[] = [
 		price: 89.99,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/4c30987baea34d119aaa9c53eee0edc0/be0a85983d044e6f812d35ba066f4de2.jpg?imwidth=1800&filter=packshot',
@@ -279,6 +300,7 @@ export const products: productInterface[] = [
 		price: 129.99,
 		category: 'man',
 		brand: 'adidas Originals',
+		shortBrand: 'Adidas',
 		description: 'CONTINENTAL 80 STRIPES UNISEX - Trainers',
 		images: [
 			'https://img01.ztat.net/article/spp-media-p1/8e15593a559c43b9a6aa422efdbe5299/c0e4defce927437cb0d952a712d0f2a2.jpg?imwidth=1800&filter=packshot',
