@@ -1,4 +1,4 @@
-import { brandInterface } from './components/shop/Shop'
+import { brandInterface } from './constants'
 export interface productInterface {
 	id: number
 	price: number

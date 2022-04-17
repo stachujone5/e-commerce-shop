@@ -3,15 +3,14 @@ import { productInterface, products } from '../../products'
 import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 import { BrandsFilter } from '../brands_filter/BrandsFilter'
 import { useEffect, useState } from 'react'
-
-export type brandInterface = 'Nike' | 'Adidas' | 'New Balance' | 'Vans'
+import { defaultCheckedBrands } from '../../constants'
+import { isBrandType } from '../../helpers'
 
 export const Shop = () => {
-	const { pathname } = useLocation()
-	const path = pathname.slice(1)
-	const checkedBrands = { Nike: true, Adidas: true, 'New Balance': true, Vans: true }
-	const [isChecked, setIsChecked] = useState(checkedBrands)
+	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)
 	const [newProducts, setNewProducts] = useState<productInterface[]>()
+
+	const path = useLocation().pathname.slice(1)
 
 	useEffect(() => {
 		if (path === 'all') {
@@ -23,18 +22,19 @@ export const Shop = () => {
 
 	useEffect(() => {
 		const filteredProducts = products.filter(product => {
-			console.log(product.shortBrand)
-			console.log(isChecked[product.shortBrand])
 			return isChecked[product.shortBrand]
 		})
 		setNewProducts(filteredProducts)
 	}, [isChecked])
 
-	const handleCheck = (e: any) => {
-		const id: brandInterface = e.target.id
-		setIsChecked(prevState => {
-			return { ...prevState, [id]: !prevState[id] }
-		})
+	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const id = e.target.id
+
+		if (isBrandType(id)) {
+			setIsChecked(prevState => {
+				return { ...prevState, [id]: !prevState[id] }
+			})
+		}
 	}
 
 	if (!newProducts) return null

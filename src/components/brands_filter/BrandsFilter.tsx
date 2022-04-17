@@ -1,5 +1,5 @@
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import { brandInterface } from '../shop/Shop'
+import { brandInterface } from '../../constants'
 
 const brands: brandInterface[] = ['Nike', 'Adidas', 'New Balance', 'Vans']
 
@@ -23,7 +23,9 @@ export const BrandsFilter = ({ isChecked, handleCheck }: BrandsFilterProps) => {
 					)
 				})}
 			</div>
-			<AiOutlineShoppingCart className='text-6xl' />
+			<button className='text-6xl'>
+				<AiOutlineShoppingCart />
+			</button>
 		</div>
 	)
 }
