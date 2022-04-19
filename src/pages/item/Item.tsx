@@ -51,7 +51,6 @@ export const Item = () => {
 		setTimeout(() => {
 			showHeader('brand')
 		}, 1500)
-		return
 	}
 
 	const showHeader = (action: string) => {
