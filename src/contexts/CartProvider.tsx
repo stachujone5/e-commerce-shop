@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react'
 
-interface CartItem {
+export interface CartItemInterface {
 	price: number
 	size: number
 	brand: string
@@ -9,8 +9,8 @@ interface CartItem {
 }
 
 interface CartContextDefaultValue {
-	cart: CartItem[]
-	setCart: React.Dispatch<React.SetStateAction<CartItem[]>>
+	cart: CartItemInterface[]
+	setCart: React.Dispatch<React.SetStateAction<CartItemInterface[]>>
 }
 
 interface CartProviderProps {
@@ -20,6 +20,6 @@ interface CartProviderProps {
 export const CartContext = createContext<CartContextDefaultValue>({ cart: [], setCart: () => {} })
 
 export const CartProvider = ({ children }: CartProviderProps) => {
-	const [cart, setCart] = useState<CartItem[]>([])
+	const [cart, setCart] = useState<CartItemInterface[]>([])
 	return <CartContext.Provider value={{ cart, setCart }}>{children}</CartContext.Provider>
 }
