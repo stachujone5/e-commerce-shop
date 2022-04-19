@@ -7,13 +7,13 @@ import { useContext, useState } from 'react'
 import { CartContext } from '../../contexts/CartProvider'
 
 export const Item = () => {
+	const { setCart } = useContext(CartContext)
+	const [checkedValue, setCheckedValue] = useState<number | null>(null)
 	const { id } = useParams()
 	const product = products.find(product => product.id === parseInt(id!))
-	const { setCart } = useContext(CartContext)
-	const [size, setSize] = useState<number | null>(null)
 
 	const handleAddToCart = () => {
-		if (size && product) {
+		if (checkedValue && product) {
 			setCart(prevCart => {
 				return [
 					...prevCart,
@@ -22,23 +22,25 @@ export const Item = () => {
 						description: product?.description,
 						id: product?.id,
 						price: product?.price,
-						size: size,
+						size: checkedValue,
 					},
 				]
 			})
+			setCheckedValue(null)
+			return
 		}
 	}
 
 	return (
 		<Container>
-			<div className='md:flex border rounded-3xl overflow-hidden my-6'>
+			<div className='md:flex border rounded-3xl overflow-hidden mb-20 mt-24'>
 				<ItemImgPreview product={product} />
 				<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
 					<div>
 						<h2 className='text-2xl md:text-3xl md:text-center'>{product?.brand}</h2>
 						<p className='my-1 md:my-5 md:text-xl md:text-center'>{product?.description}</p>
 					</div>
-					<Sizes setSize={setSize} />
+					<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} />
 					<div className='flex justify-between mt-5'>
 						<p className='text-red-500 md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
 						<button

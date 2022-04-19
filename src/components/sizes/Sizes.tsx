@@ -1,21 +1,17 @@
-import { Fragment, useState } from 'react'
-import { defaultCheckedSizes, SIZES } from '../../constants/constants'
+import { Fragment } from 'react'
+import { SIZES } from '../../constants/constants'
 import { isSizeType } from '../../helpers/helpers'
 
 interface SizesProps {
-	setSize: React.Dispatch<React.SetStateAction<number | null>>
+	checkedValue: number | null
+	setCheckedValue: React.Dispatch<React.SetStateAction<number | null>>
 }
-export const Sizes = ({ setSize }: SizesProps) => {
-	const [isChecked, setIsChecked] = useState(defaultCheckedSizes)
-
+export const Sizes = ({ checkedValue, setCheckedValue }: SizesProps) => {
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const id = e.target.id
+		const id = parseInt(e.target.id)
 
 		if (isSizeType(id)) {
-			setIsChecked(prevState => {
-				return { ...defaultCheckedSizes, [id]: !prevState[id]! }
-			})
-			setSize(parseInt(e.target.value))
+			setCheckedValue(parseInt(e.target.value))
 		}
 	}
 
@@ -25,12 +21,18 @@ export const Sizes = ({ setSize }: SizesProps) => {
 			<div className='grid grid-cols-6 my-2 2xl:grid-cols-3'>
 				{SIZES.map(size => (
 					<Fragment key={size}>
-						<input type='radio' className='hidden' name='size' value={size} id={size} onChange={handleCheck}></input>
+						<input
+							type='radio'
+							className='hidden'
+							name='size'
+							value={size}
+							id={size.toString()}
+							onChange={handleCheck}></input>
 						<label
 							className={`border text-center p-2 hover:text-primary hover:bg-white transition-colors cursor-pointer ${
-								isChecked[size] ? 'bg-white text-primary' : ''
+								checkedValue === size ? 'bg-white text-primary' : ''
 							}`}
-							htmlFor={size}>
+							htmlFor={size.toString()}>
 							{size}
 						</label>
 					</Fragment>
