@@ -27,7 +27,9 @@ export const Sizes = ({ checkedValue, setCheckedValue }: SizesProps) => {
 							name='size'
 							value={size}
 							id={size.toString()}
-							onChange={handleCheck}></input>
+							onChange={handleCheck}
+							checked={checkedValue === size}
+						/>
 						<label
 							className={`border text-center p-2 hover:text-primary hover:bg-white transition-colors cursor-pointer ${
 								checkedValue === size ? 'bg-white text-primary' : ''

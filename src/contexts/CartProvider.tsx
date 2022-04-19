@@ -5,7 +5,7 @@ export interface CartItemInterface {
 	size: number
 	brand: string
 	description: string
-	id: number
+	id: string
 }
 
 interface CartContextDefaultValue {
