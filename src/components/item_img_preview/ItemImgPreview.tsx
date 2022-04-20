@@ -1,9 +1,9 @@
 import { useRef, useState } from 'react'
-import { productInterface } from '../../constants/products'
+import { ProductInterface } from '../../constants/products'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 
 interface ItemImgPreviewProps {
-	product: productInterface | undefined
+	product: ProductInterface | undefined
 }
 
 export const ItemImgPreview = ({ product }: ItemImgPreviewProps) => {

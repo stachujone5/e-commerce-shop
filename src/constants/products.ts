@@ -1,15 +1,15 @@
-import { brandInterface } from './constants'
-export interface productInterface {
+import { BrandInterface } from './constants'
+export interface ProductInterface {
 	id: number
 	price: number
 	description: string
 	category: string
 	brand: string
-	shortBrand: brandInterface
+	shortBrand: BrandInterface
 	images: string[]
 }
 
-export const PRODUCTS: productInterface[] = [
+export const PRODUCTS: ProductInterface[] = [
 	{
 		id: 1,
 		price: 159.0,

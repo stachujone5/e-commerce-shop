@@ -1,8 +1,6 @@
-import { productInterface } from '../../constants/products'
 import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 import { BrandsFilter } from '../brands_filter/BrandsFilter'
 import { useContext } from 'react'
-
 import { ProductsContext } from '../../contexts/ProductsProvider'
 
 export const Shop = () => {
@@ -15,12 +13,12 @@ export const Shop = () => {
 			<BrandsFilter />
 			{products.length ? (
 				<div className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'>
-					{products.map((product: productInterface) => (
+					{products.map(product => (
 						<SingleShopItem key={product.id} {...product} />
 					))}
 				</div>
 			) : (
-				<h1 className='text-4xl text-center my-56'>No products matching!</h1>
+				<h2 className='text-4xl text-center my-56'>No products matching!</h2>
 			)}
 		</section>
 	)
