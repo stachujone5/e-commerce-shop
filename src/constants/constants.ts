@@ -1,7 +1,7 @@
 export const SIZES: sizesType[] = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]
 export type sizesType = 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46
 
-export const defaultCheckedBrands = { Nike: true, Adidas: true, 'New Balance': true, Vans: true }
+export const defaultCheckedBrands = { Nike: false, Adidas: false, 'New Balance': false, Vans: false }
 
 export type BrandInterface = 'Nike' | 'Adidas' | 'New Balance' | 'Vans'
 
