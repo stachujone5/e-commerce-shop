@@ -19,14 +19,12 @@ export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 	}
 
 	const handleCategoryChange = (category: string) => {
-		console.log(category)
 		if (category === 'all') {
 			setProducts(PRODUCTS)
 			return
 		}
 
 		setProducts(PRODUCTS.filter(product => product.category === category))
-		console.log(PRODUCTS.filter(product => product.category === category))
 		setIsNavOpen(false)
 	}
 
