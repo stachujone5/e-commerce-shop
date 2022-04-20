@@ -9,9 +9,13 @@ export const Cart = () => {
 	return (
 		<Container>
 			<div className='min-h-screen my-24'>
-				{cart.map(item => (
-					<CartItem key={item.id} cartItem={item} />
-				))}{' '}
+				<h2 className='text-4xl text-center my-8'>Your Cart</h2>
+				<div>
+					{cart.map(item => (
+						<CartItem key={item.id} cartItem={item} />
+					))}
+				</div>
+				<button className='p-2 bg-purple-700 rounded-lg'>Checkout</button>
 			</div>
 		</Container>
 	)

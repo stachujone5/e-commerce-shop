@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { Container } from '../../components/container/Container'
-import { products } from '../../constants/products'
+import { PRODUCTS } from '../../constants/products'
 import { ItemImgPreview } from '../../components/item_img_preview/ItemImgPreview'
 import { Sizes } from '../../components/sizes/Sizes'
 import { useContext, useEffect, useState } from 'react'
@@ -13,7 +13,7 @@ export const Item = () => {
 	const [headerType, setHeaderType] = useState('brand')
 	const { setCart } = useContext(CartContext)
 	const { id } = useParams()
-	const product = products.find(product => product.id === parseInt(id!))
+	const product = PRODUCTS.find(product => product.id === parseInt(id!))
 
 	useEffect(() => {
 		window.scrollTo(0, 0)

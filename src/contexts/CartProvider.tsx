@@ -6,6 +6,7 @@ export interface CartItemInterface {
 	brand: string
 	description: string
 	id: string
+	images: string[]
 }
 
 interface CartContextDefaultValue {

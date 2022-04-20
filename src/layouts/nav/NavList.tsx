@@ -1,6 +1,8 @@
-import { useRef } from 'react'
+import React, { useContext, useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { MENU_ITEMS } from '../../constants/constants'
+import { PRODUCTS } from '../../constants/products'
+import { ProductsContext } from '../../contexts/ProductsProvider'
 
 interface NavListProps {
 	isNavOpen: boolean
@@ -8,15 +10,21 @@ interface NavListProps {
 }
 
 export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
+	const { setProducts } = useContext(ProductsContext)
 	const ulRef = useRef<HTMLUListElement>(null)
 	let height: string | number = 0
 
-	const closeNav = () => {
-		setIsNavOpen(false)
-	}
-
 	if (ulRef.current) {
 		height = ulRef.current?.getBoundingClientRect().height! + 20 + 'px'
+	}
+
+	const handleCategoryChange = (category: string) => {
+		if (category === 'all') {
+			setProducts(PRODUCTS)
+			return
+		}
+		setProducts(PRODUCTS.filter(product => product.category === category))
+		setIsNavOpen(false)
 	}
 
 	return (
@@ -29,7 +37,7 @@ export const NavList = ({ isNavOpen, setIsNavOpen }: NavListProps) => {
 						<li key={item}>
 							<NavLink
 								to={`/${item}`}
-								onClick={closeNav}
+								onClick={() => handleCategoryChange(item)}
 								className={({ isActive }) =>
 									isActive
 										? 'border-b-2 border-red-700'

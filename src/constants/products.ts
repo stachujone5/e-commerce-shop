@@ -9,7 +9,7 @@ export interface productInterface {
 	images: string[]
 }
 
-export const products: productInterface[] = [
+export const PRODUCTS: productInterface[] = [
 	{
 		id: 1,
 		price: 159.0,

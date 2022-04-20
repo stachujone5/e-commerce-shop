@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react'
 import { productInterface } from '../../constants/products'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
-import { Button } from '../../components/button/Button'
 
 interface ItemImgPreviewProps {
 	product: productInterface | undefined
@@ -40,8 +39,12 @@ export const ItemImgPreview = ({ product }: ItemImgPreviewProps) => {
 				<img src={product?.images[3]} alt={product?.description} />
 				<img src={product?.images[4]} alt={product?.description} />
 			</div>
-			<Button icon={<FaArrowLeft />} className='absolute bottom-5 left-5' onClick={handlePrevImg} />
-			<Button icon={<FaArrowRight />} className='absolute bottom-5 right-5' onClick={handleNextImg} />
+			<button onClick={handlePrevImg} className='text-3xl text-black absolute bottom-5 left-5'>
+				<FaArrowLeft />
+			</button>
+			<button onClick={handleNextImg} className='text-3xl text-black absolute bottom-5 right-5'>
+				<FaArrowRight />
+			</button>
 		</div>
 	)
 }

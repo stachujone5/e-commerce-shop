@@ -1,11 +1,30 @@
-import { BRANDS } from '../../constants/constants'
+import { useContext, useEffect, useState } from 'react'
+import { BRANDS, defaultCheckedBrands } from '../../constants/constants'
+import { PRODUCTS } from '../../constants/products'
+import { ProductsContext } from '../../contexts/ProductsProvider'
+import { isBrandType } from '../../helpers/helpers'
 
-interface BrandsFilterProps {
-	isChecked: { Nike: boolean; Adidas: boolean; 'New Balance': boolean; Vans: boolean }
-	handleCheck: (e: React.ChangeEvent<HTMLInputElement>) => void
-}
+export const BrandsFilter = () => {
+	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)
+	const { setProducts } = useContext(ProductsContext)
 
-export const BrandsFilter = ({ isChecked, handleCheck }: BrandsFilterProps) => {
+	useEffect(() => {
+		const filteredProducts = PRODUCTS.filter(product => {
+			return isChecked[product.shortBrand]
+		})
+		setProducts(filteredProducts)
+	}, [isChecked, setProducts])
+
+	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const id = e.target.id
+
+		if (isBrandType(id)) {
+			setIsChecked(prevState => {
+				return { ...prevState, [id]: !prevState[id] }
+			})
+		}
+	}
+
 	return (
 		<div className='flex gap-4 mb-5 md:mb-7'>
 			{BRANDS.map(brand => {

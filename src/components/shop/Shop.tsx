@@ -1,50 +1,21 @@
-import { useLocation } from 'react-router-dom'
-import { productInterface, products } from '../../constants/products'
+import { productInterface } from '../../constants/products'
 import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 import { BrandsFilter } from '../brands_filter/BrandsFilter'
-import { useEffect, useState } from 'react'
-import { defaultCheckedBrands } from '../../constants/constants'
-import { isBrandType } from '../../helpers/helpers'
+import { useContext } from 'react'
+
+import { ProductsContext } from '../../contexts/ProductsProvider'
 
 export const Shop = () => {
-	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)
-	const [newProducts, setNewProducts] = useState<productInterface[]>()
+	const { products } = useContext(ProductsContext)
 
-	const path = useLocation().pathname.slice(1)
-
-	useEffect(() => {
-		if (path === 'all') {
-			setNewProducts(products)
-			return
-		}
-		setNewProducts(products.filter(product => product.category === path))
-	}, [path])
-
-	useEffect(() => {
-		const filteredProducts = products.filter(product => {
-			return isChecked[product.shortBrand]
-		})
-		setNewProducts(filteredProducts)
-	}, [isChecked])
-
-	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-		const id = e.target.id
-
-		if (isBrandType(id)) {
-			setIsChecked(prevState => {
-				return { ...prevState, [id]: !prevState[id] }
-			})
-		}
-	}
-
-	if (!newProducts) return null
+	if (!products) return null
 
 	return (
 		<section>
-			<BrandsFilter isChecked={isChecked} handleCheck={handleCheck} />
-			{newProducts.length ? (
+			<BrandsFilter />
+			{products.length ? (
 				<div className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'>
-					{newProducts.map((product: productInterface) => (
+					{products.map((product: productInterface) => (
 						<SingleShopItem key={product.id} {...product} />
 					))}
 				</div>
