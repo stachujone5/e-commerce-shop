@@ -2,12 +2,13 @@ import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 import { BrandsFilter } from '../brands_filter/BrandsFilter'
 import { useContext, useState } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
+import { LoadingSpinner } from '../loading_spinner/LoadingSpinner'
 
 export const Shop = () => {
 	const { products } = useContext(ProductsContext)
 	const [tempProducts, setTempProducts] = useState(products)
 
-	if (!products) return null
+	if (!tempProducts) return null
 
 	return (
 		<section>
@@ -21,6 +22,7 @@ export const Shop = () => {
 			) : (
 				<h2 className='text-4xl text-center my-56'>No products matching!</h2>
 			)}
+			<LoadingSpinner />
 		</section>
 	)
 }
