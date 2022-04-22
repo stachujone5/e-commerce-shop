@@ -32,7 +32,7 @@ export const Sizes = ({ checkedValue, setCheckedValue }: SizesProps) => {
 						/>
 						<label
 							className={`border border-secondary text-center p-2 hover:bg-secondary transition-colors cursor-pointer ${
-								checkedValue === size ? 'bg-secondary text-primary' : ''
+								checkedValue === size ? 'bg-secondary' : ''
 							}`}
 							htmlFor={size.toString()}>
 							{size}

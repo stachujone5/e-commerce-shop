@@ -12,7 +12,7 @@ export const Cart = () => {
 	if (!cart.length) {
 		return (
 			<Container>
-				<div className='min-h-screen mb-24 flex justify-center items-center text-secondary'>
+				<div className='min-h-screen mb-24 flex justify-center items-center text-secondary transition-colors duration-500'>
 					<h2>There is nothing here...</h2>
 				</div>
 			</Container>
@@ -23,9 +23,9 @@ export const Cart = () => {
 		<Container>
 			<div className='min-h-screen my-24'>
 				<h2 className='text-4xl text-center my-8'>Your Cart</h2>
-				<button className='p-2 bg-secondary rounded-lg'>Checkout</button>
+				<button className='p-2 bg-secondary rounded-lg transition-colors duration-500'>Checkout</button>
 				<p>
-					Total cost: <span className='text-secondary'>{total}</span> €
+					Total cost: <span className='text-secondary transition-colors duration-500'>{total}</span> €
 				</p>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
 					{cart.map(item => (

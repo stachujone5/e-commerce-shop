@@ -6,9 +6,6 @@ module.exports = {
 				primary: '#0d0d0d',
 				secondary: 'var(--clr)',
 			},
-			slow: {
-				transition: 'all .5s',
-			},
 		},
 		screens: {
 			xs: '500px',

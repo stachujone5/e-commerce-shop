@@ -11,7 +11,9 @@ export const NavBurger = ({ setIsNavOpen, isNavOpen }: NavMobileProps) => {
 		setIsNavOpen(prevState => !prevState)
 	}
 	return (
-		<button className='text-4xl cursor-pointer fixed top-4 left-4 z-50 text-secondary' onClick={handleNav}>
+		<button
+			className='text-4xl cursor-pointer fixed top-4 left-4 z-50 text-secondary transition-colors duration-500'
+			onClick={handleNav}>
 			{isNavOpen ? <IoClose /> : <GiHamburgerMenu />}
 		</button>
 	)

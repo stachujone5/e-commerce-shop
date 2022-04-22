@@ -16,7 +16,7 @@ export const CartItem = ({ cartItem }: CartItemProps) => {
 	}
 
 	return (
-		<div className='border border-secondary rounded flex relative'>
+		<div className='border border-secondary rounded flex relative transition-colors duration-500'>
 			<div className='hidden w-36 sm:block'>
 				<img src={images[0]} alt={description} />
 			</div>
@@ -26,7 +26,9 @@ export const CartItem = ({ cartItem }: CartItemProps) => {
 				<p>Size: {size}</p>
 				<p>{price} €</p>
 			</div>
-			<button className='text-red-600 absolute right-2 top-2 text-4xl' onClick={() => removeItem(id)}>
+			<button
+				className='text-secondary transition-colors duration-500 absolute right-2 top-2 text-4xl'
+				onClick={() => removeItem(id)}>
 				<IoClose />
 			</button>
 		</div>

@@ -30,8 +30,9 @@ export const ContactUs = () => {
 			)}
 
 			<p className='text-center my-5'>
-				Subscribe to our newsletter for amazing <span className='border-b-2 border-secondary'>discounts</span> that we
-				have prepared for you!
+				Subscribe to our newsletter for amazing{' '}
+				<span className='border-b-2 border-secondary transition-colors duration-500'>discounts</span> that we have
+				prepared for you!
 			</p>
 			<div className='flex justify-center relative'>
 				<form className='w-full max-w-screen-lg' onSubmit={handleForm}>

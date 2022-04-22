@@ -40,7 +40,9 @@ export const BrandsFilter = ({ setTempProducts, tempProducts }: BrandsFilterProp
 			{BRANDS.map(brand => {
 				return (
 					<div key={brand} className='text-sm sm:text-base md:text-xl'>
-						<label htmlFor={brand} className={isChecked[brand] ? 'border-b-2 cursor-pointer' : 'cursor-pointer text'}>
+						<label
+							htmlFor={brand}
+							className={isChecked[brand] ? 'border-b-2 border-secondary cursor-pointer' : 'cursor-pointer text'}>
 							{brand}
 						</label>
 						<input type='checkbox' id={brand} className='hidden' onChange={handleCheck} defaultChecked />
