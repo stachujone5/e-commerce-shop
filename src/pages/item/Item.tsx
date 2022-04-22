@@ -51,7 +51,7 @@ export const Item = () => {
 
 	return (
 		<Container>
-			<div className='md:flex border rounded-3xl overflow-hidden min-height-screen my-24'>
+			<div className='md:flex border-2 border-secondary rounded-3xl overflow-hidden min-height-screen my-24'>
 				<ItemImgPreview product={product} />
 				<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
 					<div>
@@ -60,9 +60,9 @@ export const Item = () => {
 					</div>
 					<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} />
 					<div className='flex justify-between mt-5'>
-						<p className='text-red-500 md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
+						<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
 						<button
-							className='p-2 border rounded-lg md:text-lg hover:text-primary hover:bg-white transition-colors'
+							className='p-2 border border-secondary rounded-lg md:text-lg hover:bg-secondary '
 							onClick={handleAddToCart}>
 							Add to cart
 						</button>

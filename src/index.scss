@@ -8,23 +8,25 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	transition: inherit;
 }
 
 :root {
 	--clr: #fff;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: #0d0d0d;
 	font-family: 'Poppins', sans-serif;
 	color: #fff;
+	transition: 0.5s;
 }
 
 img {
 	width: 100%;
 	display: inline-block;
-}
-
-.text {
-	color: var(--clr);
 }

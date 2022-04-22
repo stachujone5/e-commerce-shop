@@ -25,24 +25,25 @@ const settings = {
 
 export const ImgSlider = () => {
 	return (
-		<section>
-				<Slider {...settings} className='my-16'>
-					<div className='px-10'>
-						<img src={img1} alt='' />
-					</div>
-					<div className='px-10'>
-						<img src={img2} alt='' />
-					</div>
-					<div className='px-10'>
-						<img src={img3} alt='' />
-					</div>
-					<div className='px-10'>
-						<img src={img4} alt='' />
-					</div>
-					<div className='px-10'>
-						<img src={img5} alt='' />
-					</div>
-				</Slider>
+		<section className='mt-16'>
+			<h2 className='text-center text-3xl'>Gallery</h2>
+			<Slider {...settings} className='my-16'>
+				<div className='px-10'>
+					<img src={img1} alt='' />
+				</div>
+				<div className='px-10'>
+					<img src={img2} alt='' />
+				</div>
+				<div className='px-10'>
+					<img src={img3} alt='' />
+				</div>
+				<div className='px-10'>
+					<img src={img4} alt='' />
+				</div>
+				<div className='px-10'>
+					<img src={img5} alt='' />
+				</div>
+			</Slider>
 		</section>
 	)
 }

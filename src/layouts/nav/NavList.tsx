@@ -1,7 +1,5 @@
-import React, { useContext, useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { PRODUCTS } from '../../constants/products'
-import { ProductsContext } from '../../contexts/ProductsProvider'
 import { MENU_ITEMS } from '../../constants/constants'
 
 interface NavListProps {
@@ -14,9 +12,9 @@ export const NavList = ({ setIsNavOpen }: NavListProps) => {
 		<ul className='my-20'>
 			{MENU_ITEMS.map(item => {
 				return (
-					<li key={item.link} className='p-5'>
-						<Link to={`/${item.link}`} onClick={() => setIsNavOpen(false)} className='flex gap-2 text'>
-							<item.icon className='text-4xl' />
+					<li key={item.link} className='p-5 text-sm sm:text-base'>
+						<Link to={item.path} onClick={() => setIsNavOpen(false)} className='flex gap-2 text-secondary'>
+							<item.icon className='text-3xl sm:text-4xl -translate-y-1/4' />
 							{item.link}
 						</Link>
 					</li>

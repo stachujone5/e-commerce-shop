@@ -16,7 +16,7 @@ export const CartItem = ({ cartItem }: CartItemProps) => {
 	}
 
 	return (
-		<div className='border rounded flex relative'>
+		<div className='border border-secondary rounded flex relative'>
 			<div className='hidden w-36 sm:block'>
 				<img src={images[0]} alt={description} />
 			</div>

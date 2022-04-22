@@ -22,15 +22,15 @@ export const ContactUs = () => {
 		}
 	}
 	return (
-		<section>
+		<section id='#contact'>
 			{isSubmited ? (
-				<h2 className='text-center text-3xl text-green-600'>Thank you!</h2>
+				<h2 className='text-center text-3xl text-green-600 transition-colors'>Thank you!</h2>
 			) : (
 				<h2 className='text-center text-3xl'>STAY UPDATED</h2>
 			)}
 
 			<p className='text-center my-5'>
-				Subscribe to our newsletter for amazing <span className='border-b-2 border-red-600'>discounts</span> that we
+				Subscribe to our newsletter for amazing <span className='border-b-2 border-secondary'>discounts</span> that we
 				have prepared for you!
 			</p>
 			<div className='flex justify-center relative'>
