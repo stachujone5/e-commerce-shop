@@ -1,16 +1,18 @@
 import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoClose } from 'react-icons/io5'
 
 interface NavMobileProps {
 	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
+	isNavOpen: boolean
 }
 
-export const NavBurger = ({ setIsNavOpen }: NavMobileProps) => {
+export const NavBurger = ({ setIsNavOpen, isNavOpen }: NavMobileProps) => {
 	const handleNav = () => {
 		setIsNavOpen(prevState => !prevState)
 	}
 	return (
-		<button className='md:hidden text-4xl cursor-pointer' onClick={handleNav}>
-			<GiHamburgerMenu />
+		<button className='text-4xl cursor-pointer fixed top-4 left-4 z-50' onClick={handleNav}>
+			{isNavOpen ? <IoClose /> : <GiHamburgerMenu />}
 		</button>
 	)
 }

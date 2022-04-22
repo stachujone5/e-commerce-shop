@@ -6,6 +6,9 @@ module.exports = {
 				primary: '#0d0d0d',
 			},
 		},
+		screens: {
+			xs: '500px',
+		},
 	},
 	plugins: [],
 }
