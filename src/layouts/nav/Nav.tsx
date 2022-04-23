@@ -19,7 +19,7 @@ export const Nav = () => {
 		<>
 			<NavBurger setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen} />
 			<nav
-				className={`flex justify-between h-screen left-0 top-0 fixed bg-primary z-10 overflow-x-hidden transition-all border-r  ${
+				className={`flex justify-between h-screen left-0 top-0 fixed bg-primary z-40 overflow-x-hidden transition-all border-r  ${
 					isNavOpen ? 'w-full xs:w-80' : 'w-0'
 				}`}>
 				<NavList isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />

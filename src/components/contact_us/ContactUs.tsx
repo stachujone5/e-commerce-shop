@@ -32,7 +32,7 @@ export const ContactUs = () => {
 
 			<p className='text-center my-5'>
 				Do you have any questions? Fell free to {}
-				<span className='border-b-2 border-secondary transition-colors duration-500'>contact</span> us
+				<span className='border-b-2 border-secondary transition-colors duration-500'>contact</span> us!
 			</p>
 			<div className='flex justify-center relative'>
 				<form className='w-full max-w-screen-lg' onSubmit={handleForm}>

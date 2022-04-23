@@ -22,7 +22,7 @@ export const CategoryFilter = () => {
 		<div className='border-2 border-secondary w-fit mx-auto flex gap-5 rounded-3xl p-4 text-xl transition-colors duration-500 my-10'>
 			{CATEGORIES.map(category => (
 				<div className='relative'>
-					<button key={category} onClick={handleSort} className='z-10 relative p-2'>
+					<button key={category} onClick={handleSort} className='z-10 relative p-2 text-xs xxs:text-base xs:text-xl'>
 						{category}
 					</button>
 					{category === currCategory && (
