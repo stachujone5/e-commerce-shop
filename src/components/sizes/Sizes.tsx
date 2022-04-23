@@ -18,7 +18,7 @@ export const Sizes = ({ checkedValue, setCheckedValue }: SizesProps) => {
 	return (
 		<div className='md:mb-5 lg:mb-20'>
 			<p className='my-2 lg:text-xl lg:my-5'>Pick your size:</p>
-			<div className='grid grid-cols-6 my-2 2xl:grid-cols-3'>
+			<div className='grid grid-cols-6 my-2 2xl:grid-cols-3 rounded-lg overflow-hidden border border-secondary'>
 				{SIZES.map(size => (
 					<Fragment key={size}>
 						<input
@@ -31,9 +31,8 @@ export const Sizes = ({ checkedValue, setCheckedValue }: SizesProps) => {
 							checked={checkedValue === size}
 						/>
 						<label
-							className={`border border-secondary text-center p-2 hover:bg-secondary transition-colors cursor-pointer ${
-								checkedValue === size ? 'bg-secondary' : ''
-							}`}
+							className='border border-secondary text-center p-2 hover:text-secondary transition-colors cursor-pointer duration-300'
+							style={checkedValue === size ? { background: 'var(--clr)', color: '#fff' } : {}}
 							htmlFor={size.toString()}>
 							{size}
 						</label>

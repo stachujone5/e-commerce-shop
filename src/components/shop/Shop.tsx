@@ -2,6 +2,7 @@ import { SingleShopItem } from '../single_shop_item/SingleShopItem'
 import { BrandsFilter } from '../brands_filter/BrandsFilter'
 import { useContext, useState } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
+import { CategoryFilter } from '../category_filter/CategoryFilter'
 
 export const Shop = () => {
 	const { products } = useContext(ProductsContext)
@@ -11,6 +12,7 @@ export const Shop = () => {
 
 	return (
 		<section>
+			<CategoryFilter />
 			<BrandsFilter setTempProducts={setTempProducts} tempProducts={tempProducts} />
 			{products.length ? (
 				<div className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'>

@@ -14,6 +14,8 @@ export const BRANDS: BrandInterface[] = ['Nike', 'Adidas', 'New Balance', 'Vans'
 
 export const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
 
+export const CATEGORIES = ['man', 'woman', 'kids', 'all']
+
 export const MENU_ITEMS = [
 	{ link: 'shop', path: '/', icon: GiConverseShoe },
 	{ link: 'gallery', path: '/#gallery', icon: HiOutlinePhotograph },

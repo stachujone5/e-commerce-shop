@@ -5,10 +5,11 @@ export const ContactUs = () => {
 	const [isSubmited, setIsSubmited] = useState(false)
 	const [isError, setIsError] = useState(false)
 	const inputRef = useRef<HTMLInputElement>(null)
+	const textareaRef = useRef<HTMLTextAreaElement>(null)
 
 	const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		if (inputRef.current!.value.match(EMAIL_REGEX)) {
+		if (inputRef.current!.value.match(EMAIL_REGEX) && textareaRef.current?.value) {
 			inputRef.current!.value = ''
 			setIsSubmited(true)
 			setTimeout(() => {
@@ -30,9 +31,8 @@ export const ContactUs = () => {
 			)}
 
 			<p className='text-center my-5'>
-				Subscribe to our newsletter for amazing{' '}
-				<span className='border-b-2 border-secondary transition-colors duration-500'>discounts</span> that we have
-				prepared for you!
+				Do you have any questions? Fell free to {}
+				<span className='border-b-2 border-secondary transition-colors duration-500'>contact</span> us
 			</p>
 			<div className='flex justify-center relative'>
 				<form className='w-full max-w-screen-lg' onSubmit={handleForm}>
@@ -44,8 +44,16 @@ export const ContactUs = () => {
 						style={{ borderColor: isError ? 'rgb(220 38 38)' : '#fff' }}
 						placeholder='subscribe@logo.com'
 					/>
-					<button className='block ml-auto rounded-lg border p-2 my-3 hover:bg-white hover:text-primary transition-colors'>
-						Subscribe
+					<textarea
+						ref={textareaRef}
+						cols={30}
+						rows={10}
+						className='text-black w-full rounded-lg my-6 p-2 border-2'
+						style={{ borderColor: isError ? 'rgb(220 38 38)' : '#fff' }}
+						placeholder='Send us a message!'
+					/>
+					<button className='block ml-auto rounded-lg border p-2 my-3 border-secondary hover:text-secondary transition-colors duration-300'>
+						Send
 					</button>
 				</form>
 			</div>

@@ -63,7 +63,7 @@ export const Item = () => {
 						<div className='flex justify-between mt-5'>
 							<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
 							<button
-								className='p-2 border border-secondary rounded-lg md:text-lg hover:bg-secondary transition-colors duration-300'
+								className='p-2 border border-secondary rounded-lg md:text-lg hover:text-secondary transition-colors duration-300'
 								onClick={handleAddToCart}>
 								Add to cart
 							</button>

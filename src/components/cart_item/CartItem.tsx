@@ -2,12 +2,7 @@ import { CartContext, CartItemInterface } from '../../contexts/CartProvider'
 import { IoClose } from 'react-icons/io5'
 import { useContext } from 'react'
 
-interface CartItemProps {
-	cartItem: CartItemInterface
-}
-
-export const CartItem = ({ cartItem }: CartItemProps) => {
-	const { brand, description, price, size, images, id } = cartItem
+export const CartItem = ({ brand, description, size, images, id, price }: CartItemInterface) => {
 	const { cart, setCart } = useContext(CartContext)
 
 	const removeItem = (id: string) => {

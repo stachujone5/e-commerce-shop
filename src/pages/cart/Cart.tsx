@@ -29,7 +29,7 @@ export const Cart = () => {
 				</p>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
 					{cart.map(item => (
-						<CartItem key={item.id} cartItem={item} />
+						<CartItem key={item.id} {...item} />
 					))}
 				</div>
 			</div>
