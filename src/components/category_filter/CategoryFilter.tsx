@@ -3,6 +3,7 @@ import { CATEGORIES } from '../../constants/constants'
 import { PRODUCTS } from '../../constants/products'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
+import { fade } from '../shop/Shop'
 
 export const CategoryFilter = () => {
 	const { setProducts } = useContext(ProductsContext)
@@ -19,7 +20,11 @@ export const CategoryFilter = () => {
 		setCurrCategory(category!)
 	}
 	return (
-		<div className='border-2 border-secondary w-fit mx-auto flex gap-5 rounded-3xl p-4 text-xl transition-colors duration-500 my-10'>
+		<motion.div
+			className='border-2 border-secondary w-fit mx-auto flex gap-5 rounded-3xl p-4 text-xl transition-colors duration-500 my-10'
+			variants={fade}
+			initial='hidden'
+			animate='visible'>
 			{CATEGORIES.map(category => (
 				<div className='relative'>
 					<button key={category} onClick={handleSort} className='z-10 relative p-2 text-xs xxs:text-base xs:text-xl'>
@@ -29,11 +34,11 @@ export const CategoryFilter = () => {
 						<motion.div
 							className='w-full h-full rounded-full bg-secondary transition-colors duration-500 absolute top-0'
 							layoutId='active'
-							transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+							transition={{ type: 'spring', stiffness: 300, damping: 15 }}
 						/>
 					)}
 				</div>
 			))}
-		</div>
+		</motion.div>
 	)
 }

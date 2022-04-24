@@ -2,6 +2,8 @@ import { useContext } from 'react'
 import { CartItem } from '../../components/cart_item/CartItem'
 import { Container } from '../../components/container/Container'
 import { CartContext } from '../../contexts/CartProvider'
+import { motion } from 'framer-motion'
+import { fade } from '../../components/shop/Shop'
 
 export const Cart = () => {
 	const { cart } = useContext(CartContext)
@@ -11,17 +13,21 @@ export const Cart = () => {
 
 	if (!cart.length) {
 		return (
-			<Container>
-				<div className='min-h-screen mb-24 flex justify-center items-center text-secondary transition-colors duration-500'>
-					<h2>There is nothing here...</h2>
-				</div>
-			</Container>
+			<motion.main
+				className='min-h-screen mb-24 flex justify-center items-center text-secondary transition-colors duration-500'
+				variants={fade}
+				animate='visible'
+				initial='hidden'>
+				<Container>
+					<h2 className='text-center'>There is nothing here...</h2>
+				</Container>
+			</motion.main>
 		)
 	}
 
 	return (
-		<Container>
-			<div className='min-h-screen my-24'>
+		<motion.main className='min-h-screen my-24' variants={fade} animate='visible' initial='hidden'>
+			<Container>
 				<h2 className='text-4xl text-center my-8'>Your Cart</h2>
 				<button className='p-2 bg-secondary rounded-lg transition-colors duration-500'>Checkout</button>
 				<p>
@@ -32,7 +38,7 @@ export const Cart = () => {
 						<CartItem key={item.id} {...item} />
 					))}
 				</div>
-			</div>
-		</Container>
+			</Container>
+		</motion.main>
 	)
 }

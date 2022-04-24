@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { ProductInterface } from '../../constants/products'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 

@@ -19,8 +19,8 @@ export const Nav = () => {
 		<>
 			<NavBurger setIsNavOpen={setIsNavOpen} isNavOpen={isNavOpen} />
 			<nav
-				className={`flex justify-between h-screen left-0 top-0 fixed bg-primary z-40 overflow-x-hidden transition-all border-r  ${
-					isNavOpen ? 'w-full xs:w-80' : 'w-0'
+				className={`flex justify-between h-screen left-0 top-0 fixed bg-primary z-40 overflow-x-hidden transition-transform w-full sm:w-80 border-r ${
+					isNavOpen ? 'translate-x-0' : '-translate-x-full'
 				}`}>
 				<NavList isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
 				<div className='absolute left-1/2 -translate-x-1/2 bottom-5'>

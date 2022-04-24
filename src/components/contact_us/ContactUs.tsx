@@ -52,7 +52,7 @@ export const ContactUs = () => {
 						style={{ borderColor: isError ? 'rgb(220 38 38)' : '#fff' }}
 						placeholder='Send us a message!'
 					/>
-					<button className='block ml-auto rounded-lg border p-2 my-3 border-secondary hover:text-secondary transition-colors duration-300'>
+					<button className='block ml-auto rounded-lg border py-2 px-6 my-3 border-secondary hover:text-secondary transition-colors duration-300'>
 						Send
 					</button>
 				</form>

@@ -7,6 +7,8 @@ import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../contexts/CartProvider'
 import { ItemHeader } from '../../components/item_header/ItemHeader'
 import { v4 } from 'uuid'
+import { motion } from 'framer-motion'
+import { fade } from '../../components/shop/Shop'
 
 export const Item = () => {
 	const [checkedValue, setCheckedValue] = useState<number | null>(null)
@@ -50,7 +52,11 @@ export const Item = () => {
 	}
 
 	return (
-		<main className='min-h-screen flex justify-center items-center'>
+		<motion.main
+			className='min-h-screen flex justify-center items-center'
+			variants={fade}
+			animate='visible'
+			initial='hidden'>
 			<Container>
 				<div className='md:flex border-2 border-secondary rounded-3xl overflow-hidden my-24 transition-colors duration-500'>
 					<ItemImgPreview product={product} />
@@ -71,6 +77,6 @@ export const Item = () => {
 					</div>
 				</div>
 			</Container>
-		</main>
+		</motion.main>
 	)
 }
