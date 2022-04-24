@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { LogoIcon } from '../../components/logo_icon/LogoIcon'
 
 export const headerVariant = {
 	visible: {
@@ -13,13 +14,14 @@ export const headerVariant = {
 export const Header = () => {
 	return (
 		<header>
-			<motion.h1
-				className='text-center text-4xl my-24 text'
+			<motion.div
+				className='flex justify-center items-center gap-5 mt-24 md:my-24'
 				variants={headerVariant}
 				initial='hidden'
 				animate='visible'>
-				L O G O
-			</motion.h1>
+				<LogoIcon />
+				<h1 className='text-center text-4xl text'>L O G O</h1>
+			</motion.div>
 		</header>
 	)
 }

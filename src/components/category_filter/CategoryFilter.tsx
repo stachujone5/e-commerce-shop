@@ -26,7 +26,7 @@ export const CategoryFilter = () => {
 			initial='hidden'
 			animate='visible'>
 			{CATEGORIES.map(category => (
-				<div className='relative'>
+				<div className='relative' key={category}>
 					<button key={category} onClick={handleSort} className='z-10 relative p-2 text-xs xxs:text-base xs:text-xl'>
 						{category}
 					</button>
