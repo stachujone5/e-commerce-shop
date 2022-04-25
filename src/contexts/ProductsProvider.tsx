@@ -1,7 +1,7 @@
 import { createContext, useState } from 'react'
 import { ProductInterface, PRODUCTS } from '../constants/products'
 
-interface ProductsProviderProps {
+interface Props {
 	children: React.ReactNode
 }
 
@@ -19,7 +19,7 @@ export const ProductsContext = createContext<ProductsContextDefaultValue>({
 	setTempProducts: () => {},
 })
 
-export const ProductsProvider = ({ children }: ProductsProviderProps) => {
+export const ProductsProvider = ({ children }: Props) => {
 	const [products, setProducts] = useState<ProductInterface[]>(PRODUCTS)
 	const [tempProducts, setTempProducts] = useState<ProductInterface[]>([])
 

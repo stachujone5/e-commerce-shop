@@ -29,19 +29,26 @@ export const BrandsFilter = () => {
 	}
 
 	return (
-		<div className='flex flex-col gap-2 p-5'>
-			{BRANDS.map(brand => {
-				return (
-					<Fragment key={brand}>
-						<label
-							htmlFor={brand}
-							className={isChecked[brand] ? 'border-b-2 border-secondary cursor-pointer' : 'cursor-pointer text'}>
-							{brand}
-						</label>
-						<input type='checkbox' id={brand} className='hidden' onChange={handleCheck} defaultChecked />
-					</Fragment>
-				)
-			})}
+		<div>
+			<p className='text-center bg-navLight rounded-lg p-2 text-navTextLight'>Filter Brands</p>
+			<div className='border-l-2 border-navLight p-3 mt-2 flex flex-col gap-2'>
+				{BRANDS.map(brand => {
+					return (
+						<Fragment key={brand}>
+							<label
+								htmlFor={brand}
+								className={
+									isChecked[brand]
+										? 'cursor-pointer bg-navLight p-2 rounded-lg text-navTextLight'
+										: 'cursor-pointer p-2'
+								}>
+								{brand}
+							</label>
+							<input type='checkbox' id={brand} className='hidden' onChange={handleCheck} defaultChecked />
+						</Fragment>
+					)
+				})}
+			</div>
 		</div>
 	)
 }

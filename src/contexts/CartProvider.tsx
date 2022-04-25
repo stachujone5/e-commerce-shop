@@ -14,13 +14,13 @@ interface CartContextDefaultValue {
 	setCart: React.Dispatch<React.SetStateAction<CartItemInterface[]>>
 }
 
-interface CartProviderProps {
+interface Props {
 	children: React.ReactNode
 }
 
 export const CartContext = createContext<CartContextDefaultValue>({ cart: [], setCart: () => {} })
 
-export const CartProvider = ({ children }: CartProviderProps) => {
+export const CartProvider = ({ children }: Props) => {
 	const [cart, setCart] = useState<CartItemInterface[]>([])
 	return <CartContext.Provider value={{ cart, setCart }}>{children}</CartContext.Provider>
 }

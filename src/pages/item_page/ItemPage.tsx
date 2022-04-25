@@ -8,9 +8,10 @@ import { CartContext } from '../../contexts/CartProvider'
 import { ItemHeader } from '../../components/item_header/ItemHeader'
 import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
-import { fade } from '../../constants/constants'
+import { FADE } from '../../constants/constants'
+import { Layout } from '../../components/layout/Layout'
 
-export const Item = () => {
+export const ItemPage = () => {
 	const [checkedValue, setCheckedValue] = useState<number | null>(null)
 	const [headerType, setHeaderType] = useState('brand')
 	const { setCart } = useContext(CartContext)
@@ -52,31 +53,33 @@ export const Item = () => {
 	}
 
 	return (
-		<motion.main
-			className='min-h-screen flex justify-center items-center'
-			variants={fade}
-			animate='visible'
-			initial='hidden'>
-			<Container>
-				<div className='md:flex border-2 border-secondary rounded-3xl overflow-hidden my-24 transition-colors duration-500'>
-					<ItemImgPreview product={product} />
-					<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
-						<div>
-							<ItemHeader product={product} headerType={headerType} />
-							<p className='my-1 md:my-5 md:text-xl md:text-center'>{product?.description}</p>
-						</div>
-						<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} />
-						<div className='flex justify-between mt-5'>
-							<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
-							<button
-								className='p-2 border border-secondary rounded-lg md:text-lg hover:text-secondary transition-colors duration-300'
-								onClick={handleAddToCart}>
-								Add to cart
-							</button>
+		<Layout>
+			<motion.main
+				className='min-h-screen flex justify-center items-center my-12'
+				variants={FADE}
+				animate='visible'
+				initial='hidden'>
+				<Container>
+					<div className='md:flex border-2 border-secondary rounded-3xl overflow-hidden my-24 transition-colors duration-500'>
+						<ItemImgPreview product={product} />
+						<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
+							<div>
+								<ItemHeader product={product} headerType={headerType} />
+								<p className='my-1 md:my-5 md:text-xl md:text-center'>{product?.description}</p>
+							</div>
+							<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} />
+							<div className='flex justify-between mt-5'>
+								<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
+								<button
+									className='p-2 border border-secondary rounded-lg md:text-lg hover:text-secondary transition-colors duration-300'
+									onClick={handleAddToCart}>
+									Add to cart
+								</button>
+							</div>
 						</div>
 					</div>
-				</div>
-			</Container>
-		</motion.main>
+				</Container>
+			</motion.main>
+		</Layout>
 	)
 }

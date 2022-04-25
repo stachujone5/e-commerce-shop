@@ -1,26 +1,16 @@
 import { Route, Routes } from 'react-router-dom'
-import { Item } from './pages/item/Item'
-import { Home } from './pages/home/Home'
+import { ItemPage } from './pages/item_page/ItemPage'
+import { HomePage } from './pages/home_page/HomePage'
+import { CartPage } from './pages/cart_page/CartPage'
 import { Footer } from './layouts/footer/Footer'
-import { Cart } from './pages/cart/Cart'
-
-export const changeRoute = {
-	enter: {
-		opacity: 1,
-		x: 0,
-	},
-	exit: {
-		x: '-100vw',
-	},
-}
 
 export const App = () => {
 	return (
 		<>
 			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='cart' element={<Cart />} />
-				<Route path=':id' element={<Item />} />
+				<Route path='/' element={<HomePage />} />
+				<Route path='cart' element={<CartPage />} />
+				<Route path=':id' element={<ItemPage />} />
 			</Routes>
 			<Footer />
 		</>

@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { CategoryFilter } from '../category_filter/CategoryFilter'
 import { motion } from 'framer-motion'
-import { fade } from '../../constants/constants'
+import { FADE } from '../../constants/constants'
 
 export const Shop = () => {
 	const { tempProducts } = useContext(ProductsContext)
@@ -11,12 +11,12 @@ export const Shop = () => {
 	if (!tempProducts) return null
 
 	return (
-		<section>
+		<section className='min-h-screen'>
 			<CategoryFilter />
 			{tempProducts.length ? (
 				<motion.div
 					className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'
-					variants={fade}
+					variants={FADE}
 					animate='visible'
 					initial='hidden'>
 					{tempProducts.map(product => (

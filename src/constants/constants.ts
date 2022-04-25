@@ -1,8 +1,3 @@
-import { GiConverseShoe } from 'react-icons/gi'
-import { HiOutlinePhotograph } from 'react-icons/hi'
-import { FiMail } from 'react-icons/fi'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
-
 export const SIZES: sizesType[] = [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46]
 export type sizesType = 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46
 
@@ -16,14 +11,14 @@ export const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
 
 export const CATEGORIES = ['man', 'woman', 'kids', 'all']
 
-export const MENU_ITEMS = [
-	{ link: 'shop', path: '/', icon: GiConverseShoe },
-	{ link: 'gallery', path: '/#gallery', icon: HiOutlinePhotograph },
-	{ link: 'contact', path: '#contact', icon: FiMail },
-	{ link: 'cart', path: '/cart', icon: AiOutlineShoppingCart },
+export const SORTING_CATEGORIES = [
+	'Price Ascending',
+	'Price Descending',
+	'Alphabetically (a-z)',
+	'Alphabetically (z-a)',
 ]
 
-export const fade = {
+export const FADE = {
 	visible: {
 		opacity: 1,
 		transition: { duration: 0.5 },
@@ -32,4 +27,22 @@ export const fade = {
 	hidden: {
 		opacity: 0,
 	},
+}
+
+export const SETTINGS = {
+	dots: true,
+	infinite: true,
+	speed: 1000,
+	slidesToShow: 2,
+	slidesToScroll: 1,
+	autoplay: true,
+	autoplaySpeed: 3000,
+	responsive: [
+		{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 1,
+			},
+		},
+	],
 }

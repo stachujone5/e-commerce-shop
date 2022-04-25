@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { CATEGORIES, fade } from '../../constants/constants'
+import { CATEGORIES, FADE } from '../../constants/constants'
 import { PRODUCTS } from '../../constants/products'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
@@ -20,18 +20,21 @@ export const CategoryFilter = () => {
 	}
 	return (
 		<motion.div
-			className='border-2 border-secondary w-fit mx-auto flex gap-5 rounded-3xl p-4 text-xl transition-colors duration-500 mt-40 mb-10'
-			variants={fade}
+			className='border-b pb-2 w-fit mx-auto flex gap-5 text-xl transition-colors duration-500 mt-52 mb-20'
+			variants={FADE}
 			initial='hidden'
 			animate='visible'>
 			{CATEGORIES.map(category => (
 				<div className='relative' key={category}>
-					<button key={category} onClick={handleSort} className='z-10 relative p-2 text-xs xxs:text-base xs:text-xl'>
+					<button
+						key={category}
+						onClick={handleSort}
+						className='z-10 relative  p-2 md:p-4 text-xs xxs:text-base xs:text-xl'>
 						{category}
 					</button>
 					{category === currCategory && (
 						<motion.div
-							className='w-full h-full rounded-full bg-secondary transition-colors duration-500 absolute top-0'
+							className='w-full h-full rounded-3xl bg-secondary transition-colors duration-500 absolute top-0'
 							layoutId='active'
 							transition={{ type: 'spring', stiffness: 300, damping: 15 }}
 						/>

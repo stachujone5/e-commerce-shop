@@ -2,11 +2,11 @@ import { Fragment } from 'react'
 import { SIZES } from '../../constants/constants'
 import { isSizeType } from '../../helpers/helpers'
 
-interface SizesProps {
+interface Props {
 	checkedValue: number | null
 	setCheckedValue: React.Dispatch<React.SetStateAction<number | null>>
 }
-export const Sizes = ({ checkedValue, setCheckedValue }: SizesProps) => {
+export const Sizes = ({ checkedValue, setCheckedValue }: Props) => {
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const id = parseInt(e.target.id)
 

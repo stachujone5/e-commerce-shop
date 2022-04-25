@@ -5,6 +5,12 @@ module.exports = {
 			colors: {
 				primary: '#0d0d0d',
 				secondary: 'var(--clr)',
+				navDark: '#1A1D1F',
+				navLight: '#272B30',
+				navTextLight: '#F4F4F4',
+				navTextDark: '#7A7F83',
+				navBlue: '#A1F0D8',
+				navOrange: '#F9C39C',
 			},
 		},
 		screens: {
