@@ -1,32 +1,19 @@
 import { SingleShopItem } from '../single_shop_item/SingleShopItem'
-import { BrandsFilter } from '../brands_filter/BrandsFilter'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { CategoryFilter } from '../category_filter/CategoryFilter'
 import { motion } from 'framer-motion'
-
-export const fade = {
-	visible: {
-		opacity: 1,
-		transition: { duration: 0.5 },
-	},
-
-	hidden: {
-		opacity: 0,
-	},
-}
+import { fade } from '../../constants/constants'
 
 export const Shop = () => {
-	const { products } = useContext(ProductsContext)
-	const [tempProducts, setTempProducts] = useState(products)
+	const { tempProducts } = useContext(ProductsContext)
 
 	if (!tempProducts) return null
 
 	return (
 		<section>
 			<CategoryFilter />
-			<BrandsFilter setTempProducts={setTempProducts} tempProducts={tempProducts} />
-			{products.length ? (
+			{tempProducts.length ? (
 				<motion.div
 					className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'
 					variants={fade}

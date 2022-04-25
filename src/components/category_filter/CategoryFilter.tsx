@@ -1,9 +1,8 @@
 import { useContext, useState } from 'react'
-import { CATEGORIES } from '../../constants/constants'
+import { CATEGORIES, fade } from '../../constants/constants'
 import { PRODUCTS } from '../../constants/products'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
-import { fade } from '../shop/Shop'
 
 export const CategoryFilter = () => {
 	const { setProducts } = useContext(ProductsContext)
@@ -21,7 +20,7 @@ export const CategoryFilter = () => {
 	}
 	return (
 		<motion.div
-			className='border-2 border-secondary w-fit mx-auto flex gap-5 rounded-3xl p-4 text-xl transition-colors duration-500 my-10'
+			className='border-2 border-secondary w-fit mx-auto flex gap-5 rounded-3xl p-4 text-xl transition-colors duration-500 mt-40 mb-10'
 			variants={fade}
 			initial='hidden'
 			animate='visible'>

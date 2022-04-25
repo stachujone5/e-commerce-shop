@@ -1,4 +1,5 @@
 import { BrandInterface } from './constants'
+
 export interface ProductInterface {
 	id: number
 	price: number

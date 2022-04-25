@@ -3,7 +3,7 @@ import { CartItem } from '../../components/cart_item/CartItem'
 import { Container } from '../../components/container/Container'
 import { CartContext } from '../../contexts/CartProvider'
 import { motion } from 'framer-motion'
-import { fade } from '../../components/shop/Shop'
+import { fade } from '../../constants/constants'
 
 export const Cart = () => {
 	const { cart } = useContext(CartContext)
@@ -29,14 +29,16 @@ export const Cart = () => {
 		<motion.main className='min-h-screen my-24' variants={fade} animate='visible' initial='hidden'>
 			<Container>
 				<h2 className='text-4xl text-center my-8'>Your Cart</h2>
-				<button className='p-2 bg-secondary rounded-lg transition-colors duration-500'>Checkout</button>
-				<p>
-					Total cost: <span className='text-secondary transition-colors duration-500'>{total}</span> €
-				</p>
 				<div className='grid grid-cols-1 lg:grid-cols-2 gap-10'>
 					{cart.map(item => (
 						<CartItem key={item.id} {...item} />
 					))}
+				</div>
+				<div className='flex items-end justify-between mt-10'>
+					<p>
+						Total cost: <span className='text-secondary transition-colors duration-500'>{total}</span> €
+					</p>
+					<button className='p-2 bg-secondary rounded-lg transition-colors duration-500'>Checkout</button>
 				</div>
 			</Container>
 		</motion.main>

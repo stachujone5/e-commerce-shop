@@ -22,3 +22,14 @@ export const MENU_ITEMS = [
 	{ link: 'contact', path: '#contact', icon: FiMail },
 	{ link: 'cart', path: '/cart', icon: AiOutlineShoppingCart },
 ]
+
+export const fade = {
+	visible: {
+		opacity: 1,
+		transition: { duration: 0.5 },
+	},
+
+	hidden: {
+		opacity: 0,
+	},
+}

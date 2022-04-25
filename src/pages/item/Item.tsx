@@ -8,7 +8,7 @@ import { CartContext } from '../../contexts/CartProvider'
 import { ItemHeader } from '../../components/item_header/ItemHeader'
 import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
-import { fade } from '../../components/shop/Shop'
+import { fade } from '../../constants/constants'
 
 export const Item = () => {
 	const [checkedValue, setCheckedValue] = useState<number | null>(null)
