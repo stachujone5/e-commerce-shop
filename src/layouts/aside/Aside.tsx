@@ -32,14 +32,11 @@ export const Aside = ({ isNavOpen, setIsNavOpen }: Props) => {
 					<IoClose />
 				</button>
 			</div>
-
-			<div className='mt-32'>
-				<BrandsFilter />
-				<Sorter />
-			</div>
-			<div className='translate-x-4'>
-				<p className='text-center mb-2 text-secondary transition-colors duration-500 -translate-x-2'>Customize!</p>
-				<CirclePicker onChange={handleColorChange} color={color} className='translate-x-2' />
+			<BrandsFilter />
+			<Sorter />
+			<div>
+				<p className='text-center bg-navLight rounded-lg p-2 text-navTextLight mb-5'>Customize!</p>
+				<CirclePicker onChange={handleColorChange} color={color} className='translate-x-2 sm:translate-x-5' />
 			</div>
 		</aside>
 	)
