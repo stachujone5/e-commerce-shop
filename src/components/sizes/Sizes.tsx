@@ -5,8 +5,9 @@ import { isSizeType } from '../../helpers/helpers'
 interface Props {
 	checkedValue: number | null
 	setCheckedValue: React.Dispatch<React.SetStateAction<number | null>>
+	category: string | undefined
 }
-export const Sizes = ({ checkedValue, setCheckedValue }: Props) => {
+export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const id = parseInt(e.target.id)
 
@@ -15,11 +16,18 @@ export const Sizes = ({ checkedValue, setCheckedValue }: Props) => {
 		}
 	}
 
+	const sizesRange = () => {
+		if (category === 'kids') {
+			return SIZES.slice(12)
+		}
+		return SIZES.slice(12, -1)
+	}
+
 	return (
 		<div className='md:mb-5 lg:mb-20'>
 			<p className='my-2 lg:text-xl lg:my-5'>Pick your size:</p>
 			<div className='grid grid-cols-6 my-2 2xl:grid-cols-3 rounded-lg overflow-hidden border border-secondary'>
-				{SIZES.map(size => (
+				{sizesRange().map(size => (
 					<Fragment key={size}>
 						<input
 							type='radio'

@@ -68,7 +68,7 @@ export const ItemPage = () => {
 								<ItemHeader product={product} headerType={headerType} />
 								<p className='my-1 md:my-5 md:text-xl md:text-center'>{product?.description}</p>
 							</div>
-							<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} />
+							<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} category={product?.category} />
 							<div className='flex justify-between mt-5'>
 								<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
 								<Button onClick={handleAddToCart}>Add to cart</Button>
