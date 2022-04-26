@@ -18,9 +18,9 @@ export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 
 	const sizesRange = () => {
 		if (category === 'kids') {
-			return SIZES.slice(12)
+			return SIZES.slice(0, 12)
 		}
-		return SIZES.slice(12, -1)
+		return SIZES.slice(-12)
 	}
 
 	return (

@@ -2,7 +2,7 @@ import { Fragment, useContext, useEffect, useState } from 'react'
 import { BRANDS, defaultCheckedBrands } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { isBrandType } from '../../helpers/helpers'
-import { AsideItem } from '../aside_item/AsideItem'
+import { AsideItem } from '../shared/aside_item/AsideItem'
 
 export const BrandsFilter = () => {
 	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)

@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom'
-import { Container } from '../../components/container/Container'
+import { Container } from '../../components/shared/container/Container'
 import { PRODUCTS } from '../../constants/products'
 import { ItemImgPreview } from '../../components/item_img_preview/ItemImgPreview'
 import { Sizes } from '../../components/sizes/Sizes'
@@ -9,8 +9,9 @@ import { ItemHeader } from '../../components/item_header/ItemHeader'
 import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
-import { Layout } from '../../components/layout/Layout'
-import { Button } from '../../components/button/Buttons'
+import { Layout } from '../../components/shared/layout/Layout'
+import { Button } from '../../components/shared/button/Buttons'
+import { ErrorPage } from '../error_page/ErrorPage'
 
 export const ItemPage = () => {
 	const [checkedValue, setCheckedValue] = useState<number | null>(null)
@@ -53,6 +54,10 @@ export const ItemPage = () => {
 		}, 1500)
 	}
 
+	if (!product) {
+		return <ErrorPage />
+	}
+
 	return (
 		<Layout>
 			<motion.main
@@ -61,7 +66,7 @@ export const ItemPage = () => {
 				animate='visible'
 				initial='hidden'>
 				<Container>
-					<div className='md:flex border-2 border-secondary rounded-3xl overflow-hidden my-24 transition-colors duration-500'>
+					<div className='md:flex rounded-2xl overflow-hidden my-24 bg-zinc-900 shadow-lg'>
 						<ItemImgPreview product={product} />
 						<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
 							<div>

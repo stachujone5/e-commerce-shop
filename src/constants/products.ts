@@ -13,7 +13,7 @@ export interface ProductInterface {
 export const PRODUCTS: ProductInterface[] = [
 	{
 		id: 1,
-		price: 159.0,
+		price: 159,
 		category: 'man',
 		brand: 'adidas Originals',
 		shortBrand: 'Adidas',
@@ -163,7 +163,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 11,
-		price: 150.0,
+		price: 150,
 		category: 'man',
 		brand: 'Nike',
 		shortBrand: 'Nike',
@@ -208,7 +208,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 14,
-		price: 76.0,
+		price: 76,
 		category: 'man',
 		brand: 'Vans',
 		shortBrand: 'Vans',
@@ -238,7 +238,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 16,
-		price: 45.0,
+		price: 45,
 		category: 'man',
 		brand: 'Vans',
 		shortBrand: 'Vans',
@@ -343,7 +343,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 23,
-		price: 138.0,
+		price: 138,
 		category: 'woman',
 		brand: 'Nike Sportswear',
 		shortBrand: 'Nike',
@@ -388,7 +388,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 26,
-		price: 142.0,
+		price: 142,
 		category: 'woman',
 		brand: 'Nike Sportswear',
 		shortBrand: 'Nike',
@@ -478,7 +478,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 32,
-		price: 76.0,
+		price: 76,
 		category: 'woman',
 		brand: 'adidas Originals',
 		shortBrand: 'Adidas',
@@ -493,7 +493,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 33,
-		price: 39.0,
+		price: 39,
 		category: 'woman',
 		brand: 'Vans',
 		shortBrand: 'Vans',
@@ -553,7 +553,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 37,
-		price: 76.0,
+		price: 76,
 		category: 'woman',
 		brand: 'Vans',
 		shortBrand: 'Vans',
@@ -628,7 +628,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 42,
-		price: 76.0,
+		price: 76,
 		category: 'woman',
 		brand: 'New Balance',
 		shortBrand: 'New Balance',
@@ -944,7 +944,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 63,
-		price: 31.0,
+		price: 31,
 		category: 'kids',
 		brand: 'Vans',
 		shortBrand: 'Vans',
@@ -959,7 +959,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 64,
-		price: 37.0,
+		price: 37,
 		category: 'kids',
 		brand: 'Vans',
 		shortBrand: 'Vans',
@@ -1019,7 +1019,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 68,
-		price: 40.0,
+		price: 40,
 		category: 'kids',
 		brand: 'New Balance',
 		shortBrand: 'New Balance',
@@ -1034,7 +1034,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 69,
-		price: 51.0,
+		price: 51,
 		category: 'kids',
 		brand: 'New Balance',
 		shortBrand: 'New Balance',
@@ -1079,7 +1079,7 @@ export const PRODUCTS: ProductInterface[] = [
 	},
 	{
 		id: 72,
-		price: 40.0,
+		price: 40,
 		category: 'kids',
 		brand: 'New Balance',
 		shortBrand: 'New Balance',

@@ -1,11 +1,11 @@
 import { useContext, useEffect } from 'react'
 import { CartItem } from '../../components/cart_item/CartItem'
-import { Container } from '../../components/container/Container'
+import { Container } from '../../components/shared/container/Container'
 import { CartContext } from '../../contexts/CartProvider'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
-import { Layout } from '../../components/layout/Layout'
-import { Button } from '../../components/button/Buttons'
+import { Layout } from '../../components/shared/layout/Layout'
+import { Button } from '../../components/shared/button/Buttons'
 
 export const CartPage = () => {
 	const { cart } = useContext(CartContext)
@@ -21,12 +21,12 @@ export const CartPage = () => {
 		return (
 			<Layout>
 				<motion.main
-					className='min-h-screen mb-24 flex justify-center items-center text-secondary transition-colors duration-500'
+					className='min-h-screen mb-24 flex justify-center items-center text-secondary'
 					variants={FADE}
 					animate='visible'
 					initial='hidden'>
 					<Container>
-						<h2 className='text-center'>There is nothing here...</h2>
+						<h2 className='text-center text-2xl'>There is nothing here...</h2>
 					</Container>
 				</motion.main>
 			</Layout>

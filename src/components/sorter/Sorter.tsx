@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { SORTING_CATEGORIES } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { sort } from '../../helpers/sort'
-import { AsideItem } from '../aside_item/AsideItem'
+import { AsideItem } from '../shared/aside_item/AsideItem'
 import { SorterInput } from '../sorter_input/SorterInput'
 
 export const Sorter = () => {

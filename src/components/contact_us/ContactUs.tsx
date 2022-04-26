@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { EMAIL_REGEX } from '../../constants/constants'
-import { Button } from '../button/Buttons'
+import { Button } from '../shared/button/Buttons'
 
 export const ContactUs = () => {
 	const [isSubmited, setIsSubmited] = useState(false)
@@ -52,7 +52,7 @@ export const ContactUs = () => {
 						style={{ borderColor: isError ? 'rgb(220 38 38)' : '#fff' }}
 						placeholder='Send us a message!'
 					/>
-					<Button>send</Button>
+					<Button>Send</Button>
 				</form>
 			</div>
 		</section>
