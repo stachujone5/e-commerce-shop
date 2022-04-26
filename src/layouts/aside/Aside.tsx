@@ -7,11 +7,11 @@ import { ColorContext } from '../../contexts/ColorProvider'
 import Icon from '../../images/LogoIcon.svg'
 
 interface Props {
-	isNavOpen: boolean
-	setIsNavOpen: React.Dispatch<React.SetStateAction<boolean>>
+	isAsideOpen: boolean
+	setIsAsideOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export const Aside = ({ isNavOpen, setIsNavOpen }: Props) => {
+export const Aside = ({ isAsideOpen, setIsAsideOpen }: Props) => {
 	const { color, setColor } = useContext(ColorContext)
 	const handleColorChange = (pickedClr: ColorResult) => {
 		setColor(pickedClr.hex)
@@ -22,22 +22,29 @@ export const Aside = ({ isNavOpen, setIsNavOpen }: Props) => {
 	}, [color])
 
 	return (
-		<aside
-			className={`flex flex-col justify-between h-screen left-0 top-0 fixed bg-navDark z-50 overflow-x-hidden transition-transform w-full sm:w-80 p-5 text-navTextDark ${
-				isNavOpen ? 'translate-x-0' : '-translate-x-full'
-			}`}>
-			<div className='flex justify-between'>
-				<img src={Icon} alt='LOGO' className='w-16 md:w-20 -translate-y-2 -scale-x-100' />
-				<button className='text-4xl text-navTextLight' onClick={() => setIsNavOpen(false)}>
-					<IoClose />
-				</button>
-			</div>
-			<BrandsFilter />
-			<Sorter />
-			<div>
-				<p className='text-center bg-navLight rounded-lg p-2 text-navTextLight mb-5'>Customize!</p>
-				<CirclePicker onChange={handleColorChange} color={color} className='translate-x-2 sm:translate-x-5' />
-			</div>
-		</aside>
+		<>
+			<aside
+				className={`flex flex-col justify-between h-screen left-0 top-0 fixed bg-primary z-50 overflow-x-hidden transition-transform w-full sm:w-80 p-5 text-textDark ${
+					isAsideOpen ? 'translate-x-0' : '-translate-x-full'
+				}`}>
+				<div className='flex justify-between'>
+					<img src={Icon} alt='LOGO' className='w-16 md:w-20 -translate-y-2 -scale-x-100' />
+					<button className='text-4xl text-textLight' onClick={() => setIsAsideOpen(false)}>
+						<IoClose />
+					</button>
+				</div>
+				<BrandsFilter />
+				<Sorter />
+				<div>
+					<p className='text-center bg-navLight rounded-lg p-2 text-textLight mb-5'>Customize!</p>
+					<CirclePicker onChange={handleColorChange} color={color} className='translate-x-2 sm:translate-x-5' />
+				</div>
+			</aside>
+			<div
+				onClick={() => isAsideOpen && setIsAsideOpen(false)}
+				className={`bg-black/80 fixed top-0 left-0 bottom-0 right-0 z-40 transition-opacity ${
+					isAsideOpen ? 'opacity-1' : 'opacity-0 pointer-events-none'
+				}`}></div>
+		</>
 	)
 }

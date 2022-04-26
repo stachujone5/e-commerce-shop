@@ -10,6 +10,7 @@ import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
 import { Layout } from '../../components/layout/Layout'
+import { Button } from '../../components/button/Buttons'
 
 export const ItemPage = () => {
 	const [checkedValue, setCheckedValue] = useState<number | null>(null)
@@ -70,11 +71,7 @@ export const ItemPage = () => {
 							<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} />
 							<div className='flex justify-between mt-5'>
 								<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
-								<button
-									className='p-2 border border-secondary rounded-lg md:text-lg hover:text-secondary transition-colors duration-300'
-									onClick={handleAddToCart}>
-									Add to cart
-								</button>
+								<Button onClick={handleAddToCart}>Add to cart</Button>
 							</div>
 						</div>
 					</div>

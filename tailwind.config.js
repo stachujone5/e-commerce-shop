@@ -3,14 +3,12 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				primary: '#0d0d0d',
+				primary: '#1c1f20',
+				primaryDark: '#1A1D1F',
 				secondary: 'var(--clr)',
-				navDark: '#1A1D1F',
-				navLight: '#272B30',
-				navTextLight: '#F4F4F4',
-				navTextDark: '#7A7F83',
-				navBlue: '#A1F0D8',
-				navOrange: '#F9C39C',
+				light: '#272B30',
+				textLight: '#F4F4F4',
+				textDark: '#7A7F83',
 			},
 		},
 		screens: {

@@ -7,11 +7,11 @@ interface Props {
 }
 
 export const Layout = ({ children }: Props) => {
-	const [isNavOpen, setIsNavOpen] = useState(false)
+	const [isAsideOpen, setIsAsideOpen] = useState(false)
 	return (
 		<>
-			<Nav setIsNavOpen={setIsNavOpen} />
-			<Aside isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
+			<Nav setIsAsideOpen={setIsAsideOpen} />
+			<Aside isAsideOpen={isAsideOpen} setIsAsideOpen={setIsAsideOpen} />
 			{children}
 		</>
 	)

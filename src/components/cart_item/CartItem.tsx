@@ -11,7 +11,10 @@ export const CartItem = ({ brand, description, size, images, id, price }: CartIt
 	}
 
 	return (
-		<div className='border border-secondary rounded flex relative transition-colors duration-500'>
+		<div
+			className={`border border-secondary rounded flex relative transition-colors duration-500 ${
+				cart.length === 1 ? 'w-1/2' : ''
+			}`}>
 			<div className='hidden w-36 sm:block'>
 				<img src={images[0]} alt={description} />
 			</div>

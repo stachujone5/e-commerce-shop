@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import { EMAIL_REGEX } from '../../constants/constants'
+import { Button } from '../button/Buttons'
 
 export const ContactUs = () => {
 	const [isSubmited, setIsSubmited] = useState(false)
@@ -23,13 +24,12 @@ export const ContactUs = () => {
 		}
 	}
 	return (
-		<section id='#contact'>
+		<section>
 			{isSubmited ? (
 				<h2 className='text-center text-3xl text-green-600 transition-colors'>Thank you!</h2>
 			) : (
 				<h2 className='text-center text-3xl'>STAY UPDATED</h2>
 			)}
-
 			<p className='text-center my-5'>
 				Do you have any questions? Fell free to {}
 				<span className='border-b-2 border-secondary transition-colors duration-500'>contact</span> us!
@@ -52,9 +52,7 @@ export const ContactUs = () => {
 						style={{ borderColor: isError ? 'rgb(220 38 38)' : '#fff' }}
 						placeholder='Send us a message!'
 					/>
-					<button className='block ml-auto rounded-lg border py-2 px-6 my-3 border-secondary hover:text-secondary transition-colors duration-300'>
-						Send
-					</button>
+					<Button>send</Button>
 				</form>
 			</div>
 		</section>
