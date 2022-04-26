@@ -11,7 +11,8 @@ export const CartItem = ({ brand, description, size, images, id, price }: CartIt
 	}
 
 	return (
-		<div className={`rounded-xl flex relative bg-zinc-900 overflow-hidden ${cart.length === 1 ? 'w-1/2' : ''}`}>
+		<div
+			className={`rounded-xl flex relative bg-zinc-900 overflow-hidden shadow-lg ${cart.length === 1 ? 'w-1/2' : ''}`}>
 			<div className='hidden w-36 sm:block'>
 				<img src={images[0]} alt={description} />
 			</div>

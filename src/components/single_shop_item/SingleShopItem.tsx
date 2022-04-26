@@ -7,7 +7,7 @@ export const SingleShopItem = ({ id, description, brand, images, price }: Produc
 			<div className='flex flex-col max-w-s rounded-lg overflow-hidden shadow-lg'>
 				<img src={images[0]} alt={description} className='object-cover' />
 				<div className='p-2 h-32 flex flex-col justify-center bg-zinc-900'>
-					<p className=''>{brand}</p>
+					<p>{brand}</p>
 					<p className='my-2'>{description}</p>
 					<p className='text-secondary transition-colors duration-500'>{price} €</p>
 				</div>

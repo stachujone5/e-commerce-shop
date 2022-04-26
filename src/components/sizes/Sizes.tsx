@@ -1,6 +1,7 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import { SIZES } from '../../constants/constants'
 import { isSizeType } from '../../helpers/helpers'
+import { AsideItem } from '../shared/aside_item/AsideItem'
 
 interface Props {
 	checkedValue: number | null
@@ -8,6 +9,8 @@ interface Props {
 	category: string | undefined
 }
 export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
+	const [isListOpen, setIsListOpen] = useState(false)
+
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const id = parseInt(e.target.id)
 
@@ -25,28 +28,30 @@ export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 
 	return (
 		<div className='md:mb-5 lg:mb-20'>
-			<p className='my-2 lg:text-xl lg:my-5'>Pick your size:</p>
-			<div className='grid grid-cols-6 my-2 2xl:grid-cols-3 rounded-lg overflow-hidden border border-secondary'>
-				{sizesRange().map(size => (
-					<Fragment key={size}>
-						<input
-							type='radio'
-							className='hidden'
-							name='size'
-							value={size}
-							id={size.toString()}
-							onChange={handleCheck}
-							checked={checkedValue === size}
-						/>
-						<label
-							className='border border-secondary text-center p-2 hover:text-secondary transition-colors cursor-pointer duration-300'
-							style={checkedValue === size ? { background: 'var(--clr)', color: '#fff' } : {}}
-							htmlFor={size.toString()}>
-							{size}
-						</label>
-					</Fragment>
-				))}
-			</div>
+			<AsideItem title='Pick your size:'>
+				<div className='grid grid-cols-6 2xl:grid-cols-3'>
+					{sizesRange().map(size => (
+						<Fragment key={size}>
+							<input
+								type='radio'
+								className='hidden'
+								name='size'
+								value={size}
+								id={size.toString()}
+								onChange={handleCheck}
+								checked={checkedValue === size}
+							/>
+							<label
+								className={`cursor-pointer p-2 rounded-lg text-center ${
+									checkedValue === size ? 'bg-light text-textLight' : ''
+								}`}
+								htmlFor={size.toString()}>
+								{size}
+							</label>
+						</Fragment>
+					))}
+				</div>
+			</AsideItem>
 		</div>
 	)
 }

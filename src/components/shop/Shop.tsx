@@ -1,12 +1,16 @@
 import { SingleShopItem } from '../single_shop_item/SingleShopItem'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { CategoryFilter } from '../category_filter/CategoryFilter'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
 
 export const Shop = () => {
-	const { tempProducts } = useContext(ProductsContext)
+	const { tempProducts, setTempProducts, products } = useContext(ProductsContext)
+
+	useEffect(() => {
+		setTempProducts(products)
+	}, [products, setTempProducts])
 
 	if (!tempProducts) return null
 
