@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const ColorProvider = ({ children }: Props) => {
-	const [color, setColor] = useState('#9C27B0')
+	const [color, setColor] = useState('#ff9800')
 
 	return <ColorContext.Provider value={{ color, setColor }}>{children}</ColorContext.Provider>
 }
