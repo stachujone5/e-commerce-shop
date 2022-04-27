@@ -1,9 +1,10 @@
 import { useContext, useEffect } from 'react'
 import { ColorResult, CirclePicker } from 'react-color'
 import { IoClose } from 'react-icons/io5'
-import { BrandsFilter } from '../../components/brands_filter/BrandsFilter'
-import { Sorter } from '../../components/sorter/Sorter'
+import { BrandsFilter } from '../../components/aside/BrandsFilter'
+import { Sorter } from '../../components/aside/Sorter'
 import { ColorContext } from '../../contexts/ColorProvider'
+import clsx from 'clsx'
 import Icon from '../../images/LogoIcon.svg'
 
 interface Props {
@@ -24,9 +25,10 @@ export const Aside = ({ isAsideOpen, setIsAsideOpen }: Props) => {
 	return (
 		<>
 			<aside
-				className={`flex flex-col justify-between h-screen left-0 top-0 fixed bg-primary z-50 overflow-x-hidden transition-transform w-full sm:w-80 p-5 text-textDark ${
-					isAsideOpen ? 'translate-x-0' : '-translate-x-full'
-				}`}>
+				className={clsx(
+					'flex flex-col justify-between h-screen left-0 top-0 fixed bg-primary z-50 overflow-x-hidden transition-transform w-full sm:w-80 p-5 text-textDark -translate-x-full',
+					isAsideOpen && 'translate-x-0'
+				)}>
 				<div className='flex justify-between'>
 					<img src={Icon} alt='LOGO' className='w-16 md:w-20 -translate-y-2 -scale-x-100' />
 					<button className='text-4xl text-textLight' onClick={() => setIsAsideOpen(false)}>
@@ -41,10 +43,11 @@ export const Aside = ({ isAsideOpen, setIsAsideOpen }: Props) => {
 				</div>
 			</aside>
 			<div
-				onClick={() => isAsideOpen && setIsAsideOpen(false)}
-				className={`bg-black/80 fixed top-0 left-0 bottom-0 right-0 z-40 transition-opacity ${
+				onClick={() => setIsAsideOpen(false)}
+				className={clsx(
+					'bg-black/80 fixed top-0 left-0 bottom-0 right-0 z-40 transition-opacity',
 					isAsideOpen ? 'opacity-1' : 'opacity-0 pointer-events-none'
-				}`}></div>
+				)}></div>
 		</>
 	)
 }

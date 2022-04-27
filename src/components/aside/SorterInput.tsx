@@ -1,3 +1,5 @@
+import clsx from 'clsx'
+
 interface Props {
 	id: string
 	checked: string
@@ -16,7 +18,10 @@ export const SorterInput = ({ id, checked, setChecked }: Props) => {
 			/>
 			<label
 				htmlFor={id}
-				className={checked === id ? 'cursor-pointer bg-light p-2 rounded-lg text-textLight' : 'cursor-pointer p-2'}>
+				className={clsx(
+					'cursor-pointer p-2',
+					checked === id && 'cursor-pointer bg-light p-2 rounded-lg text-textLight'
+				)}>
 				{id}
 			</label>
 		</>

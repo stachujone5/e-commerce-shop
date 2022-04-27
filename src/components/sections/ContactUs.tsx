@@ -10,8 +10,9 @@ export const ContactUs = () => {
 
 	const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		if (inputRef.current!.value.match(EMAIL_REGEX) && textareaRef.current?.value) {
+		if (inputRef.current?.value.match(EMAIL_REGEX) && textareaRef.current?.value) {
 			inputRef.current!.value = ''
+			textareaRef.current!.value = ''
 			setIsSubmited(true)
 			setTimeout(() => {
 				setIsSubmited(false)

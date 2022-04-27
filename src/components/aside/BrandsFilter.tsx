@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { Fragment, useContext, useEffect, useState } from 'react'
 import { BRANDS, defaultCheckedBrands } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
@@ -36,9 +37,10 @@ export const BrandsFilter = () => {
 					<Fragment key={brand}>
 						<label
 							htmlFor={brand}
-							className={
-								isChecked[brand] ? 'cursor-pointer bg-light p-2 rounded-lg text-textLight' : 'cursor-pointer p-2'
-							}>
+							className={clsx(
+								'cursor-pointer p-2',
+								isChecked[brand] && 'cursor-pointer bg-light p-2 rounded-lg text-textLight'
+							)}>
 							{brand}
 						</label>
 						<input type='checkbox' id={brand} className='hidden' onChange={handleCheck} defaultChecked />

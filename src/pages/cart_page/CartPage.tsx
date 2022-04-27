@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
 import { Layout } from '../../components/shared/layout/Layout'
 import { Button } from '../../components/shared/button/Buttons'
+import clsx from 'clsx'
 
 export const CartPage = () => {
 	const { cart } = useContext(CartContext)
@@ -39,14 +40,19 @@ export const CartPage = () => {
 				<Container>
 					<h2 className='text-4xl text-center my-8'>Your Cart</h2>
 					<div
-						className={`grid grid-cols-1 lg:grid-cols-2 gap-10 ${
-							cart.length === 1 ? 'place-items-center lg:grid-cols-1' : ''
-						}`}>
+						className={clsx(
+							'grid grid-cols-1 lg:grid-cols-2 gap-10',
+							cart.length === 1 && 'lg:place-items-center lg:grid-cols-1'
+						)}>
 						{cart.map(item => (
 							<CartItem key={item.id} {...item} />
 						))}
 					</div>
-					<div className={`flex items-end justify-between mt-10 ${cart.length === 1 ? 'w-1/2 mx-auto' : ''}`}>
+					<div
+						className={clsx(
+							'flex flex-col items-center md:items-end md:justify-between mt-10',
+							cart.length === 1 && 'lg:w-1/2 lg:mx-auto'
+						)}>
 						<p className='py-2'>
 							Total cost: <span className='text-secondary transition-colors duration-500'>{total.toFixed(2)}</span> €
 						</p>

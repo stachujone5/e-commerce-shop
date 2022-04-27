@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom'
 import { Container } from '../../components/shared/container/Container'
 import { PRODUCTS } from '../../constants/products'
-import { ItemImgPreview } from '../../components/item_img_preview/ItemImgPreview'
-import { Sizes } from '../../components/sizes/Sizes'
+import { ItemImgPreview } from '../../components/item/ItemImgPreview'
+import { Sizes } from '../../components/item/Sizes'
 import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../contexts/CartProvider'
-import { ItemHeader } from '../../components/item_header/ItemHeader'
+import { ItemHeader } from '../../components/item/ItemHeader'
 import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
@@ -30,10 +30,11 @@ export const ItemPage = () => {
 				return [
 					...prevCart,
 					{
-						brand: product?.brand,
+						brand: product.brand,
 						description: product?.description,
-						id: v4(),
-						price: product?.price,
+						cartId: v4(),
+						id: product.id,
+						price: product.price,
 						size: checkedValue,
 						images: product.images,
 						count: 0,

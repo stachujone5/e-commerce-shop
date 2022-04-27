@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
-import { ContactUs } from '../../components/contact_us/ContactUs'
+import { ContactUs } from '../../components/sections/ContactUs'
 import { Container } from '../../components/shared/container/Container'
-import { ImgSlider } from '../../components/img_slider/ImgSlider'
+import { ImgSlider } from '../../components/sections/ImgSlider'
 import { Layout } from '../../components/shared/layout/Layout'
 import { Shop } from '../../components/shop/Shop'
 

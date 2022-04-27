@@ -1,4 +1,5 @@
-import { Fragment, useState } from 'react'
+import clsx from 'clsx'
+import { Fragment } from 'react'
 import { SIZES } from '../../constants/constants'
 import { isSizeType } from '../../helpers/helpers'
 import { AsideItem } from '../shared/aside_item/AsideItem'
@@ -9,8 +10,6 @@ interface Props {
 	category: string | undefined
 }
 export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
-	const [isListOpen, setIsListOpen] = useState(false)
-
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const id = parseInt(e.target.id)
 
@@ -42,9 +41,10 @@ export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 								checked={checkedValue === size}
 							/>
 							<label
-								className={`cursor-pointer p-2 rounded-lg text-center ${
-									checkedValue === size ? 'bg-light text-textLight' : ''
-								}`}
+								className={clsx(
+									'cursor-pointer p-2 rounded-lg text-center',
+									checkedValue === size && 'bg-light text-textLight'
+								)}
 								htmlFor={size.toString()}>
 								{size}
 							</label>

@@ -5,7 +5,8 @@ export interface CartItemInterface {
 	size: number
 	brand: string
 	description: string
-	id: string
+	id: number
+	cartId: string
 	images: string[]
 }
 
