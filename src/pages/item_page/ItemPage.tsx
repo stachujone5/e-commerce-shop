@@ -1,16 +1,16 @@
 import { useParams } from 'react-router-dom'
-import { Container } from '../../components/shared/container/Container'
+import { Container } from '../../components/shared/Container'
 import { PRODUCTS } from '../../constants/products'
 import { ItemImgPreview } from '../../components/item/ItemImgPreview'
-import { Sizes } from '../../components/item/Sizes'
+import { ItemSizes } from '../../components/item/ItemSizes'
 import { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../../contexts/CartProvider'
 import { ItemHeader } from '../../components/item/ItemHeader'
 import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
-import { Layout } from '../../components/shared/layout/Layout'
-import { Button } from '../../components/shared/button/Buttons'
+import { Layout } from '../../components/shared/Layout'
+import { Button } from '../../components/shared/Buttons'
 import { ErrorPage } from '../error_page/ErrorPage'
 
 export const ItemPage = () => {
@@ -31,7 +31,7 @@ export const ItemPage = () => {
 					...prevCart,
 					{
 						brand: product.brand,
-						description: product?.description,
+						description: product.description,
 						cartId: v4(),
 						id: product.id,
 						price: product.price,
@@ -72,11 +72,11 @@ export const ItemPage = () => {
 						<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
 							<div>
 								<ItemHeader product={product} headerType={headerType} />
-								<p className='my-1 md:my-5 md:text-xl md:text-center'>{product?.description}</p>
+								<p className='my-1 md:my-5 md:text-xl md:text-center'>{product.description}</p>
 							</div>
-							<Sizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} category={product?.category} />
+							<ItemSizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} category={product.category} />
 							<div className='flex justify-between mt-5'>
-								<p className='text-white md:text-lg lg:text-2xl p-2'>{product?.price} €</p>
+								<p className='text-white md:text-lg lg:text-2xl p-2'>{product.price} €</p>
 								<Button onClick={handleAddToCart}>Add to cart</Button>
 							</div>
 						</div>

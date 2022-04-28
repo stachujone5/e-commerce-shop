@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { CATEGORIES, FADE } from '../../constants/constants'
+import { CATEGORIES, FADE, PRODUCTS_PER_PAGE } from '../../constants/constants'
 import { PRODUCTS } from '../../constants/products'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
@@ -11,11 +11,11 @@ export const CategoryFilter = () => {
 	const handleSort = (e: React.MouseEvent<HTMLButtonElement>) => {
 		const category = e.currentTarget.textContent
 		if (category === 'all') {
-			setProducts(PRODUCTS)
+			setProducts(PRODUCTS.slice(0, PRODUCTS_PER_PAGE))
 			setCurrCategory('all')
 			return
 		}
-		setProducts(PRODUCTS.filter(product => product.category === category))
+		setProducts(PRODUCTS.slice(0, PRODUCTS_PER_PAGE).filter(product => product.category === category))
 		setCurrCategory(category!)
 	}
 	return (

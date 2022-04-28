@@ -3,7 +3,7 @@ interface Props {
 	title: string
 }
 
-export const AsideItem = ({ children, title }: Props) => {
+export const Rows = ({ children, title }: Props) => {
 	return (
 		<div>
 			<p className='text-center bg-light rounded-lg p-2 text-textLight'>{title}</p>

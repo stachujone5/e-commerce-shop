@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ProductInterface } from '../../constants/products'
+import { ProductInterface } from '../../types/types'
 
 export const SingleShopItem = ({ id, description, brand, images, price }: ProductInterface) => {
 	return (

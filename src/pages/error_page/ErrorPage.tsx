@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import { Container } from '../../components/shared/container/Container'
-import { Layout } from '../../components/shared/layout/Layout'
+import { Container } from '../../components/shared/Container'
+import { Layout } from '../../components/shared/Layout'
 
 export const ErrorPage = () => {
 	return (

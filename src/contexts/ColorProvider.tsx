@@ -4,7 +4,7 @@ interface ColorContextDefaultValue {
 	color: string
 	setColor: React.Dispatch<React.SetStateAction<string>>
 }
-export const ColorContext = createContext<ColorContextDefaultValue>({ color: '', setColor: () => {} })
+export const ColorContext = createContext<ColorContextDefaultValue>({ color: '#ff9800', setColor: () => {} })
 
 interface Props {
 	children: React.ReactNode

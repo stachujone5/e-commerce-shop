@@ -3,7 +3,7 @@ import { Fragment, useContext, useEffect, useState } from 'react'
 import { BRANDS, defaultCheckedBrands } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { isBrandType } from '../../helpers/helpers'
-import { AsideItem } from '../shared/aside_item/AsideItem'
+import { Rows } from '../shared/Rows'
 
 export const BrandsFilter = () => {
 	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)
@@ -31,7 +31,7 @@ export const BrandsFilter = () => {
 	}
 
 	return (
-		<AsideItem title='Filter Brands'>
+		<Rows title='Filter Brands'>
 			{BRANDS.map(brand => {
 				return (
 					<Fragment key={brand}>
@@ -47,6 +47,6 @@ export const BrandsFilter = () => {
 					</Fragment>
 				)
 			})}
-		</AsideItem>
+		</Rows>
 	)
 }

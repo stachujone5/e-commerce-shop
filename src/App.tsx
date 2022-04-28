@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { ItemPage } from './pages/item_page/ItemPage'
 import { HomePage } from './pages/home_page/HomePage'
 import { CartPage } from './pages/cart_page/CartPage'
-import { Footer } from './layouts/footer/Footer'
+import { Footer } from './components/footer/Footer'
 
 export const App = () => {
 	return (

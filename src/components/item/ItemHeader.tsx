@@ -1,11 +1,11 @@
-import { ProductInterface } from '../../constants/products'
+import { ProductInterface } from '../../types/types'
 
-export interface ItemHeaderProps {
-	product: ProductInterface | undefined
+interface Props {
+	product: ProductInterface
 	headerType: string
 }
 
-export const ItemHeader = ({ product, headerType }: ItemHeaderProps) => {
+export const ItemHeader = ({ product, headerType }: Props) => {
 	if (headerType === 'error') {
 		return <h2 className='text-2xl md:text-3xl md:text-center text-red-600'>Pick a size!</h2>
 	}

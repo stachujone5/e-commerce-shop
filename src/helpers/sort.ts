@@ -1,6 +1,7 @@
-import { ProductInterface } from './../constants/products'
+import { ProductInterface } from './../types/types'
+import { CriteriaType } from '../types/types'
 
-export const sort = (criteria: string, tempProducts: ProductInterface[]) => {
+export const sort = (criteria: CriteriaType, tempProducts: ProductInterface[]) => {
 	if (criteria === 'Price Ascending') {
 		return tempProducts.sort((a, b) => a.price - b.price)
 	}

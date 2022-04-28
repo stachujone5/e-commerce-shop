@@ -2,14 +2,14 @@ import clsx from 'clsx'
 import { Fragment } from 'react'
 import { SIZES } from '../../constants/constants'
 import { isSizeType } from '../../helpers/helpers'
-import { AsideItem } from '../shared/aside_item/AsideItem'
+import { Rows } from '../shared/Rows'
 
 interface Props {
 	checkedValue: number | null
 	setCheckedValue: React.Dispatch<React.SetStateAction<number | null>>
-	category: string | undefined
+	category: string
 }
-export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
+export const ItemSizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const id = parseInt(e.target.id)
 
@@ -27,7 +27,7 @@ export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 
 	return (
 		<div className='md:mb-5 lg:mb-20'>
-			<AsideItem title='Pick your size:'>
+			<Rows title='Pick your size:'>
 				<div className='grid grid-cols-6 2xl:grid-cols-3'>
 					{sizesRange().map(size => (
 						<Fragment key={size}>
@@ -51,7 +51,7 @@ export const Sizes = ({ checkedValue, setCheckedValue, category }: Props) => {
 						</Fragment>
 					))}
 				</div>
-			</AsideItem>
+			</Rows>
 		</div>
 	)
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Nav } from '../../../layouts/nav/Nav'
-import { Aside } from '../../../layouts/aside/Aside'
+import { Nav } from '../nav/Nav'
+import { Aside } from '../aside/Aside'
 
 interface Props {
 	children: React.ReactNode

@@ -1,11 +1,11 @@
 import { useContext, useEffect } from 'react'
 import { CartItem } from '../../components/cart_item/CartItem'
-import { Container } from '../../components/shared/container/Container'
+import { Container } from '../../components/shared/Container'
 import { CartContext } from '../../contexts/CartProvider'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
-import { Layout } from '../../components/shared/layout/Layout'
-import { Button } from '../../components/shared/button/Buttons'
+import { Layout } from '../../components/shared/Layout'
+import { Button } from '../../components/shared/Buttons'
 import clsx from 'clsx'
 
 export const CartPage = () => {
