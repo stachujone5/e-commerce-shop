@@ -73,7 +73,7 @@ export const ItemPage = () => {
 						<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
 							<div>
 								<ItemHeader product={product} header={header} />
-								<p className='my-1 md:my-5 md:text-xl md:text-center'>{product.description}</p>
+								<p className='my-3 md:my-5 md:text-xl md:text-center'>{product.description}</p>
 							</div>
 							<ItemSizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} category={product.category} />
 							<div className='flex justify-between mt-5'>

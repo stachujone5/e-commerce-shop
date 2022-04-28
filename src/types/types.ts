@@ -27,3 +27,10 @@ export interface CartItemInterface {
 	cartId: string
 	images: string[]
 }
+
+export interface DefaultCheckedBrandsInterface {
+	Nike: boolean
+	Adidas: boolean
+	'New Balance': boolean
+	Vans: boolean
+}

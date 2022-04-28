@@ -1,15 +1,15 @@
 import { ProductInterface } from './../types/types'
 import { CriteriaType } from '../types/types'
 
-export const sort = (criteria: CriteriaType, tempProducts: ProductInterface[]) => {
+export const sort = (criteria: CriteriaType, products: ProductInterface[]) => {
 	if (criteria === 'Price Ascending') {
-		return tempProducts.sort((a, b) => a.price - b.price)
+		return products.sort((a, b) => a.price - b.price)
 	}
 	if (criteria === 'Price Descending') {
-		return tempProducts.sort((a, b) => b.price - a.price)
+		return products.sort((a, b) => b.price - a.price)
 	}
 	if (criteria === 'Alphabetically (a-z)') {
-		return tempProducts.sort((a, b) => {
+		return products.sort((a, b) => {
 			if (a.description < b.description) {
 				return -1
 			}
@@ -20,7 +20,7 @@ export const sort = (criteria: CriteriaType, tempProducts: ProductInterface[]) =
 		})
 	}
 	if (criteria === 'Alphabetically (z-a)') {
-		return tempProducts.sort((a, b) => {
+		return products.sort((a, b) => {
 			if (a.description > b.description) {
 				return -1
 			}
@@ -30,5 +30,5 @@ export const sort = (criteria: CriteriaType, tempProducts: ProductInterface[]) =
 			return 0
 		})
 	}
-	return tempProducts
+	return products
 }

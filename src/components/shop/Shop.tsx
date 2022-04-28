@@ -3,28 +3,33 @@ import { useContext, useEffect } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { CategoryFilter } from './CategoryFilter'
 import { motion } from 'framer-motion'
-import { returnDefaultProducts, FADE } from '../../constants/constants'
+import { FADE } from '../../constants/constants'
+import { DEFAULT_PRODUCTS } from '../../constants/defaults'
+import { returnNewProducts } from '../../helpers/returnNewProducts'
 
 export const Shop = () => {
-	const { tempProducts, setTempProducts, setProducts } = useContext(ProductsContext)
+	const { setProducts, products, checkedBrands, category, sorting } = useContext(ProductsContext)
 
 	useEffect(() => {
-		setProducts(returnDefaultProducts())
-		setTempProducts(returnDefaultProducts())
-	}, [setProducts, setTempProducts])
+		setProducts(DEFAULT_PRODUCTS)
+	}, [setProducts])
 
-	if (!tempProducts) return null
+	useEffect(() => {
+		setProducts(returnNewProducts(category, sorting, checkedBrands))
+	}, [checkedBrands, setProducts, category, sorting])
+
+	if (!products) return null
 
 	return (
 		<section className='min-h-screen'>
 			<CategoryFilter />
-			{tempProducts.length ? (
+			{products.length ? (
 				<motion.div
 					className='grid justify-items-center gap-10 md:grid-cols-2 xl:grid-cols-4'
 					variants={FADE}
 					animate='visible'
 					initial='hidden'>
-					{tempProducts.map(product => (
+					{products.map(product => (
 						<SingleShopItem key={product.id} {...product} />
 					))}
 				</motion.div>

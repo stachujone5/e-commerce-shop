@@ -1,9 +1,6 @@
 import { BrandType, CategoryType, CriteriaType, SizesType } from './../types/types'
-import { PRODUCTS } from './products'
 
 export const SIZES: SizesType[] = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
-
-export const DEFAULT_CHECKED_BRANDS = { Nike: false, Adidas: false, 'New Balance': false, Vans: false }
 
 export const BRANDS: BrandType[] = ['Nike', 'Adidas', 'New Balance', 'Vans']
 
@@ -17,14 +14,6 @@ export const CRITERIAS: CriteriaType[] = [
 	'Alphabetically (a-z)',
 	'Alphabetically (z-a)',
 ]
-
-export const DEFAULT_CATEGORY: CategoryType = 'man'
-
-export const DEFAULT_COLOR = '#ff9800'
-
-export const returnDefaultProducts = () => {
-	return PRODUCTS.filter(product => product.category === DEFAULT_CATEGORY)
-}
 
 export const FADE = {
 	visible: {

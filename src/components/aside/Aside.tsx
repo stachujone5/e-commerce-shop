@@ -46,7 +46,7 @@ export const Aside = ({ isAsideOpen, setIsAsideOpen }: Props) => {
 				onClick={() => setIsAsideOpen(false)}
 				className={clsx(
 					'bg-black/80 fixed top-0 left-0 bottom-0 right-0 z-40 transition-opacity',
-					isAsideOpen ? 'opacity-1' : 'opacity-0 pointer-events-none'
+					!isAsideOpen && 'opacity-0 pointer-events-none'
 				)}></div>
 		</>
 	)

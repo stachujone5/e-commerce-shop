@@ -1,26 +1,16 @@
-import { useContext, useEffect, useState, Fragment } from 'react'
-import { CRITERIAS } from '../../constants/constants'
+import { useContext, Fragment } from 'react'
 import { ProductsContext } from '../../contexts/ProductsProvider'
-import { sort } from '../../helpers/sort'
 import { Rows } from '../shared/Rows'
 import { isCriteriaType } from '../../helpers/typeguards'
-import { CriteriaType } from '../../types/types'
+import { CRITERIAS } from '../../constants/constants'
 import clsx from 'clsx'
 
 export const Sorter = () => {
-	const [checked, setChecked] = useState<CriteriaType>('Price Descending')
-	const { tempProducts, setTempProducts } = useContext(ProductsContext)
-
-	useEffect(() => {
-		if (checked) {
-			const sortedProducts = sort(checked, tempProducts)
-			setTempProducts([...sortedProducts])
-		}
-	}, [checked, tempProducts, setTempProducts])
+	const { sorting, setSorting } = useContext(ProductsContext)
 
 	const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
 		if (isCriteriaType(e.target.id)) {
-			setChecked(e.target.id)
+			setSorting(e.target.id)
 		}
 	}
 
@@ -40,7 +30,7 @@ export const Sorter = () => {
 						htmlFor={criteria}
 						className={clsx(
 							'cursor-pointer p-2',
-							checked === criteria && 'cursor-pointer bg-light p-2 rounded-lg text-textLight'
+							sorting === criteria && 'cursor-pointer bg-light p-2 rounded-lg text-textLight'
 						)}>
 						{criteria}
 					</label>

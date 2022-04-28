@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { DEFAULT_COLOR } from '../constants/constants'
+import { DEFAULT_COLOR } from '../constants/defaults'
 
 interface ColorContextDefaultValue {
 	color: string

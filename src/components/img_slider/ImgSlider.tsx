@@ -5,6 +5,7 @@ import img3 from '../../images/3.png'
 import img4 from '../../images/4.png'
 import img5 from '../../images/5.png'
 import { SETTINGS } from '../../constants/constants'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 
 export const ImgSlider = () => {
 	return (
@@ -12,19 +13,19 @@ export const ImgSlider = () => {
 			<h2 className='text-center text-3xl'>Gallery</h2>
 			<Slider {...SETTINGS} className='my-16'>
 				<div className='px-10'>
-					<img src={img1} alt='' />
+					<LazyLoadImage src={img1} alt="One of the LOGO's shoes" />
 				</div>
 				<div className='px-10'>
-					<img src={img2} alt='' />
+					<LazyLoadImage src={img2} alt="One of the LOGO's shoes" />
 				</div>
 				<div className='px-10'>
-					<img src={img3} alt='' />
+					<LazyLoadImage src={img3} alt="One of the LOGO's shoes" />
 				</div>
 				<div className='px-10'>
-					<img src={img4} alt='' />
+					<LazyLoadImage src={img4} alt="One of the LOGO's shoes" />
 				</div>
 				<div className='px-10'>
-					<img src={img5} alt='' />
+					<LazyLoadImage src={img5} alt="One of the LOGO's shoes" />
 				</div>
 			</Slider>
 		</section>

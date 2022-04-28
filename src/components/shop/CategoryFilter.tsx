@@ -1,24 +1,16 @@
-import { useContext, useState } from 'react'
-import { CATEGORIES, DEFAULT_CATEGORY, FADE } from '../../constants/constants'
-import { PRODUCTS } from '../../constants/products'
+import { useContext } from 'react'
+import { CATEGORIES, FADE } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
 import { isCategoryType } from '../../helpers/typeguards'
 
 export const CategoryFilter = () => {
-	const { setProducts } = useContext(ProductsContext)
-	const [currCategory, setCurrCategory] = useState(DEFAULT_CATEGORY)
+	const { category, setCategory } = useContext(ProductsContext)
 
 	const handleSort = (e: React.MouseEvent<HTMLButtonElement>) => {
-		const category = e.currentTarget.name
-		if (isCategoryType(category)) {
-			if (category === 'all') {
-				setProducts(PRODUCTS)
-				setCurrCategory(category)
-				return
-			}
-			setProducts(PRODUCTS.filter(product => product.category === category))
-			setCurrCategory(category)
+		const newCategory = e.currentTarget.name
+		if (isCategoryType(newCategory)) {
+			setCategory(newCategory)
 		}
 	}
 	return (
@@ -27,16 +19,16 @@ export const CategoryFilter = () => {
 			variants={FADE}
 			initial='hidden'
 			animate='visible'>
-			{CATEGORIES.map(category => (
-				<div className='relative' key={category}>
+			{CATEGORIES.map(cat => (
+				<div className='relative' key={cat}>
 					<button
-						key={category}
+						key={cat}
 						onClick={handleSort}
-						name={category}
+						name={cat}
 						className='z-10 relative  p-2 md:p-4 text-xs xxs:text-base xs:text-xl'>
-						{category}
+						{cat}
 					</button>
-					{category === currCategory && (
+					{cat === category && (
 						<motion.div
 							className='w-full h-full rounded-3xl bg-secondary transition-colors duration-500 absolute top-0'
 							layoutId='active'
