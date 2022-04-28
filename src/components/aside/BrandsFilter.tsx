@@ -10,9 +10,7 @@ export const BrandsFilter = () => {
 	const { products, tempProducts, setTempProducts } = useContext(ProductsContext)
 
 	useEffect(() => {
-		const filteredProducts = products.filter(product => {
-			return isChecked[product.shortBrand]
-		})
+		const filteredProducts = products.filter(product => isChecked[product.shortBrand])
 		if (filteredProducts.length) {
 			setTempProducts(filteredProducts)
 			return

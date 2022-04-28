@@ -20,6 +20,8 @@ export const CRITERIAS: CriteriaType[] = [
 
 export const DEFAULT_CATEGORY: CategoryType = 'man'
 
+export const DEFAULT_COLOR = '#ff9800'
+
 export const returnDefaultProducts = () => {
 	return PRODUCTS.filter(product => product.category === DEFAULT_CATEGORY)
 }

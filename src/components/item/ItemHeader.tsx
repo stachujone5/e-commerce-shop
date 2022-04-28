@@ -14,5 +14,5 @@ export const ItemHeader = ({ product, header }: Props) => {
 		return <h2 className='text-2xl md:text-3xl md:text-center text-green-600'>Item added!</h2>
 	}
 
-	return <h2 className='text-2xl md:text-3xl md:text-center'>{product?.brand}</h2>
+	return <h2 className='text-2xl md:text-3xl md:text-center'>{product.brand}</h2>
 }
