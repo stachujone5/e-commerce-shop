@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { EMAIL_REGEX } from '../../constants/constants'
-import { Button } from '../shared/Buttons'
+import { Button } from '../shared/Button'
 
 export const ContactUs = () => {
 	const [isSubmited, setIsSubmited] = useState(false)
@@ -11,8 +11,8 @@ export const ContactUs = () => {
 	const handleForm = (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
 		if (inputRef.current?.value.match(EMAIL_REGEX) && textareaRef.current?.value) {
-			inputRef.current!.value = ''
-			textareaRef.current!.value = ''
+			inputRef.current.value = ''
+			textareaRef.current.value = ''
 			setIsSubmited(true)
 			setTimeout(() => {
 				setIsSubmited(false)

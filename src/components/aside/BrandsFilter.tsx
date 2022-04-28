@@ -1,12 +1,12 @@
 import clsx from 'clsx'
 import { Fragment, useContext, useEffect, useState } from 'react'
-import { BRANDS, defaultCheckedBrands } from '../../constants/constants'
+import { BRANDS, DEFAULT_CHECKED_BRANDS } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
-import { isBrandType } from '../../helpers/helpers'
+import { isBrandType } from '../../helpers/typeguards'
 import { Rows } from '../shared/Rows'
 
 export const BrandsFilter = () => {
-	const [isChecked, setIsChecked] = useState(defaultCheckedBrands)
+	const [isChecked, setIsChecked] = useState(DEFAULT_CHECKED_BRANDS)
 	const { products, tempProducts, setTempProducts } = useContext(ProductsContext)
 
 	useEffect(() => {

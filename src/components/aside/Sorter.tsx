@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState, Fragment } from 'react'
-import { SORTING_CATEGORIES } from '../../constants/constants'
+import { CRITERIAS } from '../../constants/constants'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { sort } from '../../helpers/sort'
 import { Rows } from '../shared/Rows'
-import { isCriteriaType } from '../../helpers/helpers'
+import { isCriteriaType } from '../../helpers/typeguards'
 import { CriteriaType } from '../../types/types'
 import clsx from 'clsx'
 
@@ -26,23 +26,23 @@ export const Sorter = () => {
 
 	return (
 		<Rows title='Sort By'>
-			{SORTING_CATEGORIES.map(category => (
-				<Fragment key={category}>
+			{CRITERIAS.map(criteria => (
+				<Fragment key={criteria}>
 					<input
 						type='radio'
-						id={category}
+						id={criteria}
 						className='hidden'
 						name='sorting'
 						onChange={handleCheck}
-						defaultChecked={category === 'Price Descending'}
+						defaultChecked={criteria === 'Price Descending'}
 					/>
 					<label
-						htmlFor={category}
+						htmlFor={criteria}
 						className={clsx(
 							'cursor-pointer p-2',
-							checked === category && 'cursor-pointer bg-light p-2 rounded-lg text-textLight'
+							checked === criteria && 'cursor-pointer bg-light p-2 rounded-lg text-textLight'
 						)}>
-						{category}
+						{criteria}
 					</label>
 				</Fragment>
 			))}

@@ -5,7 +5,7 @@ import { CartContext } from '../../contexts/CartProvider'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
 import { Layout } from '../../components/shared/Layout'
-import { Button } from '../../components/shared/Buttons'
+import { Button } from '../../components/shared/Button'
 import clsx from 'clsx'
 
 export const CartPage = () => {

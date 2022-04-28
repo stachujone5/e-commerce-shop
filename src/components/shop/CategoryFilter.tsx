@@ -1,22 +1,25 @@
 import { useContext, useState } from 'react'
-import { CATEGORIES, FADE, PRODUCTS_PER_PAGE } from '../../constants/constants'
+import { CATEGORIES, DEFAULT_CATEGORY, FADE } from '../../constants/constants'
 import { PRODUCTS } from '../../constants/products'
 import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
+import { isCategoryType } from '../../helpers/typeguards'
 
 export const CategoryFilter = () => {
 	const { setProducts } = useContext(ProductsContext)
-	const [currCategory, setCurrCategory] = useState('all')
+	const [currCategory, setCurrCategory] = useState(DEFAULT_CATEGORY)
 
 	const handleSort = (e: React.MouseEvent<HTMLButtonElement>) => {
-		const category = e.currentTarget.textContent
-		if (category === 'all') {
-			setProducts(PRODUCTS.slice(0, PRODUCTS_PER_PAGE))
-			setCurrCategory('all')
-			return
+		const category = e.currentTarget.name
+		if (isCategoryType(category)) {
+			if (category === 'all') {
+				setProducts(PRODUCTS)
+				setCurrCategory(category)
+				return
+			}
+			setProducts(PRODUCTS.filter(product => product.category === category))
+			setCurrCategory(category)
 		}
-		setProducts(PRODUCTS.slice(0, PRODUCTS_PER_PAGE).filter(product => product.category === category))
-		setCurrCategory(category!)
 	}
 	return (
 		<motion.div
@@ -29,6 +32,7 @@ export const CategoryFilter = () => {
 					<button
 						key={category}
 						onClick={handleSort}
+						name={category}
 						className='z-10 relative  p-2 md:p-4 text-xs xxs:text-base xs:text-xl'>
 						{category}
 					</button>

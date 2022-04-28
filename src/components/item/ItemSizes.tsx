@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { Fragment } from 'react'
 import { SIZES } from '../../constants/constants'
-import { isSizeType } from '../../helpers/helpers'
+import { isSizeType } from '../../helpers/typeguards'
 import { Rows } from '../shared/Rows'
 
 interface Props {

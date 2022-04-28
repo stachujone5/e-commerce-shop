@@ -10,12 +10,13 @@ import { v4 } from 'uuid'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
 import { Layout } from '../../components/shared/Layout'
-import { Button } from '../../components/shared/Buttons'
+import { Button } from '../../components/shared/Button'
 import { ErrorPage } from '../error_page/ErrorPage'
+import { HeaderType } from '../../types/types'
 
 export const ItemPage = () => {
 	const [checkedValue, setCheckedValue] = useState<number | null>(null)
-	const [headerType, setHeaderType] = useState('brand')
+	const [header, setHeader] = useState<HeaderType>('brand')
 	const { setCart } = useContext(CartContext)
 	const { id } = useParams()
 	const product = PRODUCTS.find(product => product.id === parseInt(id!))
@@ -42,16 +43,16 @@ export const ItemPage = () => {
 				]
 			})
 			setCheckedValue(null)
-			setHeaderType('success')
+			setHeader('success')
 			setTimeout(() => {
-				setHeaderType('brand')
+				setHeader('brand')
 			}, 1500)
 			return
 		}
 
-		setHeaderType('error')
+		setHeader('error')
 		setTimeout(() => {
-			setHeaderType('brand')
+			setHeader('brand')
 		}, 1500)
 	}
 
@@ -71,7 +72,7 @@ export const ItemPage = () => {
 						<ItemImgPreview product={product} />
 						<div className='p-5 lg:p-10 md:relative md:w-2/3 md:flex md:flex-col md:justify-between'>
 							<div>
-								<ItemHeader product={product} headerType={headerType} />
+								<ItemHeader product={product} header={header} />
 								<p className='my-1 md:my-5 md:text-xl md:text-center'>{product.description}</p>
 							</div>
 							<ItemSizes setCheckedValue={setCheckedValue} checkedValue={checkedValue} category={product.category} />

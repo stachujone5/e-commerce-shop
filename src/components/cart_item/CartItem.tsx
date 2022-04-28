@@ -20,7 +20,7 @@ export const CartItem = ({ brand, description, size, images, cartId, price, id }
 				'flex relative rounded-xl bg-zinc-900 overflow-hidden shadow-lg',
 				cart.length === 1 && 'lg:w-1/2'
 			)}>
-			<Link to={`/${id}`} className='flex'>
+			<Link to={`/${id}`} className='flex w-full'>
 				<div className='hidden w-50 sm:w-36 sm:block'>
 					<img src={images[0]} alt={description} />
 				</div>

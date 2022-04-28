@@ -1,25 +1,28 @@
-import { BrandType, SizesType } from './../types/types'
+import { BrandType, CategoryType, CriteriaType, SizesType } from './../types/types'
+import { PRODUCTS } from './products'
 
 export const SIZES: SizesType[] = [31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48]
 
-export const defaultCheckedBrands = { Nike: false, Adidas: false, 'New Balance': false, Vans: false }
+export const DEFAULT_CHECKED_BRANDS = { Nike: false, Adidas: false, 'New Balance': false, Vans: false }
 
 export const BRANDS: BrandType[] = ['Nike', 'Adidas', 'New Balance', 'Vans']
 
 export const EMAIL_REGEX = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
 
-export const CATEGORIES = ['man', 'woman', 'kids', 'all']
+export const CATEGORIES: CategoryType[] = ['man', 'woman', 'kids', 'all']
 
-export const CRITERIAS = ['Price Ascending', 'Price Descending', 'Alphabetically (a-z)', 'Alphabetically (z-a)']
-
-export const PRODUCTS_PER_PAGE = 8
-
-export const SORTING_CATEGORIES = [
+export const CRITERIAS: CriteriaType[] = [
 	'Price Ascending',
 	'Price Descending',
 	'Alphabetically (a-z)',
 	'Alphabetically (z-a)',
 ]
+
+export const DEFAULT_CATEGORY: CategoryType = 'man'
+
+export const returnDefaultProducts = () => {
+	return PRODUCTS.filter(product => product.category === DEFAULT_CATEGORY)
+}
 
 export const FADE = {
 	visible: {
