@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import { CATEGORIES, FADE } from '../../constants/constants'
-import { ProductsContext } from '../../contexts/ProductsProvider'
 import { motion } from 'framer-motion'
 import { isCategoryType } from '../../helpers/typeguards'
+import { ProductsContext } from '../../contexts/ProductsContext'
 
 export const CategoryFilter = () => {
 	const { category, setCategory } = useContext(ProductsContext)

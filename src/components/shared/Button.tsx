@@ -1,7 +1,7 @@
 import clsx from 'clsx'
+import { Children } from '../../types/types'
 
-interface Props {
-	children: React.ReactNode
+interface Props extends Children {
 	onClick?: () => void
 	className?: string
 }

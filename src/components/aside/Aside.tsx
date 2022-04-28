@@ -3,9 +3,9 @@ import { ColorResult, CirclePicker } from 'react-color'
 import { IoClose } from 'react-icons/io5'
 import { BrandsFilter } from './BrandsFilter'
 import { Sorter } from './Sorter'
-import { ColorContext } from '../../contexts/ColorProvider'
 import clsx from 'clsx'
 import Icon from '../../images/LogoIcon.svg'
+import { ColorContext } from '../../contexts/ColorContext'
 
 interface Props {
 	isAsideOpen: boolean

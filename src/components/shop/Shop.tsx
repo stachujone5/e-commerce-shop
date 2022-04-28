@@ -1,11 +1,11 @@
 import { SingleShopItem } from './SingleShopItem'
 import { useContext, useEffect } from 'react'
-import { ProductsContext } from '../../contexts/ProductsProvider'
 import { CategoryFilter } from './CategoryFilter'
 import { motion } from 'framer-motion'
 import { FADE } from '../../constants/constants'
 import { DEFAULT_PRODUCTS } from '../../constants/defaults'
 import { returnNewProducts } from '../../helpers/returnNewProducts'
+import { ProductsContext } from '../../contexts/ProductsContext'
 
 export const Shop = () => {
 	const { setProducts, products, checkedBrands, category, sorting } = useContext(ProductsContext)

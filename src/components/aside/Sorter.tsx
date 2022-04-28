@@ -1,9 +1,9 @@
 import { useContext, Fragment } from 'react'
-import { ProductsContext } from '../../contexts/ProductsProvider'
 import { Rows } from '../shared/Rows'
 import { isCriteriaType } from '../../helpers/typeguards'
 import { CRITERIAS } from '../../constants/constants'
 import clsx from 'clsx'
+import { ProductsContext } from '../../contexts/ProductsContext'
 
 export const Sorter = () => {
 	const { sorting, setSorting } = useContext(ProductsContext)

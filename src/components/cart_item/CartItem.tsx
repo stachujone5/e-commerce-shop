@@ -1,9 +1,9 @@
-import { CartContext } from '../../contexts/CartProvider'
 import { IoClose } from 'react-icons/io5'
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import clsx from 'clsx'
 import { CartItemInterface } from '../../types/types'
+import { CartContext } from '../../contexts/CartContext'
 
 export const CartItem = ({ brand, description, size, images, cartId, price, id }: CartItemInterface) => {
 	const { cart, setCart } = useContext(CartContext)

@@ -2,12 +2,9 @@ import { useState } from 'react'
 import { Nav } from '../nav/Nav'
 import { Aside } from '../aside/Aside'
 import { Footer } from '../footer/Footer'
+import { Children } from '../../types/types'
 
-interface Props {
-	children: React.ReactNode
-}
-
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children }: Children) => {
 	const [isAsideOpen, setIsAsideOpen] = useState(false)
 	return (
 		<>

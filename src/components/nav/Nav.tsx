@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import { useContext } from 'react'
 import { GiHamburgerMenu } from 'react-icons/gi'
-import { CartContext } from '../../contexts/CartProvider'
 import Icon from '../../images/LogoIcon.svg'
+import { CartContext } from '../../contexts/CartContext'
 
 const logoVariants = {
 	visible: {
@@ -22,6 +22,7 @@ interface Props {
 
 export const Nav = ({ setIsAsideOpen }: Props) => {
 	const { cart } = useContext(CartContext)
+
 	return (
 		<nav className='fixed top-0 flex justify-between w-full px-5 md:px-10 py-5 bg-zinc-900 z-40 shadow-lg'>
 			<button className='text-4xl cursor-pointer' onClick={() => setIsAsideOpen(prevState => !prevState)}>

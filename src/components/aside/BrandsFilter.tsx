@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { Fragment, useContext } from 'react'
 import { BRANDS } from '../../constants/constants'
-import { ProductsContext } from '../../contexts/ProductsProvider'
+import { ProductsContext } from '../../contexts/ProductsContext'
 import { isBrandType } from '../../helpers/typeguards'
 import { Rows } from '../shared/Rows'
 

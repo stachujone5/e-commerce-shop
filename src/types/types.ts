@@ -8,6 +8,10 @@ export type CategoryType = 'man' | 'woman' | 'kids' | 'all'
 
 export type HeaderType = 'brand' | 'success' | 'error'
 
+export interface Children {
+	children: React.ReactNode
+}
+
 export interface ProductInterface {
 	id: number
 	price: number
@@ -28,9 +32,4 @@ export interface CartItemInterface {
 	images: string[]
 }
 
-export interface DefaultCheckedBrandsInterface {
-	Nike: boolean
-	Adidas: boolean
-	'New Balance': boolean
-	Vans: boolean
-}
+export type DefaultCheckedBrandsInterface = Record<BrandType, boolean>

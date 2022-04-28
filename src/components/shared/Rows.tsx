@@ -1,5 +1,6 @@
-interface Props {
-	children: React.ReactNode
+import { Children } from '../../types/types'
+
+interface Props extends Children {
 	title: string
 }
 
